@@ -20,9 +20,9 @@ const works = [
 
 export default function Works() {
   return (
-    <section className="w-full py-20 px-4 bg-white">
+    <section className="w-full py-20 px-4 bg-background">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-4xl font-bold mb-12 text-center">Works</h2>
+        <h2 className="text-h1 mb-12 text-center text-foreground">Works</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {works.map((work) => (
             <Link key={work.id} href={`/work/${work.slug}`}>
@@ -36,8 +36,8 @@ export default function Works() {
                   />
                 </div>
                 <div className="mt-4">
-                  <h3 className="text-2xl font-semibold">{work.title}</h3>
-                  <p className="text-gray-600 mt-2">{work.description}</p>
+                  <h3 className="text-h1 text-foreground">{work.title}</h3>
+                  <p className="text-body text-foreground mt-2">{work.description}</p>
                 </div>
               </div>
             </Link>

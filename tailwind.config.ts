@@ -9,8 +9,19 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        // Semantic color tokens
+        primary: "hsl(var(--primary))",
+        "primary-foreground": "hsl(var(--primary-foreground))",
+        background: "hsl(var(--background))",
+        foreground: "hsl(var(--foreground))",
+        // Base colors (for direct use if needed)
+        white: "hsl(var(--color-white))",
+        black: "hsl(var(--color-black))",
+        blue: "hsl(var(--color-blue))",
+      },
+      fontFamily: {
+        inter: "var(--font-inter)",
+        mono: "var(--font-ibm-plex-mono)",
       },
     },
   },

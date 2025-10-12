@@ -3,21 +3,78 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+  /* Base Colors (HSL) */
+  --color-white: 0 0% 100%;
+  --color-black: 0 0% 13%;
+  --color-blue: 212 64% 55%;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  /* Semantic Color Tokens */
+  --primary: var(--color-blue);
+  --primary-foreground: var(--color-white);
+  --background: var(--color-black);
+  --foreground: var(--color-white);
+
+  /* Typography - Font Families */
+  --font-inter: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-ibm-plex-mono: 'IBM Plex Mono', 'Courier New', monospace;
+
+  /* Typography - H1 */
+  --h1-font: var(--font-inter);
+  --h1-weight: 500;
+  --h1-size: 26px;
+  --h1-line-height: 1.2;
+  --h1-letter-spacing: -0.02em;
+
+  /* Typography - Body */
+  --body-font: var(--font-inter);
+  --body-weight: 500;
+  --body-size: 14px;
+  --body-line-height: 1.5;
+  --body-letter-spacing: -0.02em;
+
+  /* Typography - Supporting / Navbar */
+  --supporting-font: var(--font-ibm-plex-mono);
+  --supporting-weight: 400;
+  --supporting-size: 14px;
+  --supporting-line-height: 1.5;
+  --supporting-letter-spacing: -0.05em;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  color: hsl(var(--foreground));
+  background: hsl(var(--background));
+  font-family: var(--body-font);
+  font-weight: var(--body-weight);
+  font-size: var(--body-size);
+  line-height: var(--body-line-height);
+  letter-spacing: var(--body-letter-spacing);
+}
+
+/* Typography Utility Classes */
+@layer components {
+  .text-h1 {
+    font-family: var(--h1-font);
+    font-weight: var(--h1-weight);
+    font-size: var(--h1-size);
+    line-height: var(--h1-line-height);
+    letter-spacing: var(--h1-letter-spacing);
+  }
+
+  .text-body {
+    font-family: var(--body-font);
+    font-weight: var(--body-weight);
+    font-size: var(--body-size);
+    line-height: var(--body-line-height);
+    letter-spacing: var(--body-letter-spacing);
+  }
+
+  .text-supporting {
+    font-family: var(--supporting-font);
+    font-weight: var(--supporting-weight);
+    font-size: var(--supporting-size);
+    line-height: var(--supporting-line-height);
+    letter-spacing: var(--supporting-letter-spacing);
+  }
 }
 
 @layer utilities {

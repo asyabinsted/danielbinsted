@@ -1,70 +1,80 @@
-import Image from "next/image";
-import { notFound } from "next/navigation";
+'use client';
 
-// This would typically come from a database or CMS
-const works: Record<string, {
-  title: string;
-  description: string;
-  role: string;
-  year: string;
-  images: string[];
-  videoUrl?: string;
-}> = {
-  "work-01": {
-    title: "Project One",
-    description: "Detailed description of project one will go here. This is a placeholder for the actual project description that will be added later.",
-    role: "Director/Editor/Cinematographer",
-    year: "2024",
-    images: ["/images/work-pages/work-01-placeholder.jpg"],
-  },
-  "work-02": {
-    title: "Project Two",
-    description: "Detailed description of project two will go here. This is a placeholder for the actual project description that will be added later.",
-    role: "Director/Editor",
-    year: "2024",
-    images: ["/images/work-pages/work-02-placeholder.jpg"],
-  },
-};
-
-export function generateStaticParams() {
-  return Object.keys(works).map((slug) => ({
-    slug: slug,
-  }));
-}
+import { useRef } from 'react';
+import { notFound } from 'next/navigation';
+import { works } from '@/lib/worksData';
+import BackButton from '@/components/work/BackButton';
+import WorkVideoPlayer from '@/components/work/WorkVideoPlayer';
+import WorkInformation from '@/components/work/WorkInformation';
 
 export default function WorkDetail({ params }: { params: { slug: string } }) {
   const work = works[params.slug];
+  const informationRef = useRef<HTMLDivElement>(null);
 
   if (!work) {
     notFound();
   }
 
-  return (
-    <main className="w-full min-h-screen">
-      {work.videoUrl && (
-        <div className="w-full aspect-video bg-gray-900">
-          <video 
-            controls 
-            className="w-full h-full"
-            poster={work.images[0]}
-          >
-            <source src={work.videoUrl} type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-        </div>
-      )}
+  const handleInformationClick = () => {
+    if (informationRef.current) {
+      informationRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
-      {work.images.map((image, index) => (
-        <div key={index} className="relative w-full h-screen">
-          <Image
-            src={image}
-            alt={`${work.title} - Image ${index + 1}`}
-            fill
-            className="object-cover"
-            priority={index === 0}
-          />
-        </div>
-      ))}
+  const handleBackgroundClick = () => {
+    if (typeof window !== 'undefined' && (window as any).toggleVideo) {
+      (window as any).toggleVideo();
+    }
+  };
+
+  const handleVideoToggle = () => {
+    if (typeof window !== 'undefined' && (window as any).toggleVideo) {
+      (window as any).toggleVideo();
+    }
+  };
+
+  // Determine custom widths based on slug
+  const getPosterWidth = () => {
+    if (params.slug === 'the-war-of-raya-sinitsina') return 200;
+    return 120; // Default width
+  };
+
+  const getAwardsWidth = () => {
+    if (params.slug === 'julian-edelman') return 120;
+    return 160; // Default width
+  };
+
+  return (
+    <main className="w-full min-h-screen relative overflow-x-hidden">
+      <BackButton />
+      
+      <WorkVideoPlayer
+        videoSrc={work.videoSrc}
+        posterSrc={work.posterSrc}
+        title={work.title}
+        metadata={work.metadata}
+        role={work.role}
+        onInformationClick={handleInformationClick}
+        onVideoToggle={handleVideoToggle}
+      />
+
+      <div ref={informationRef}>
+        <WorkInformation
+          title={work.title}
+          metadata={work.metadata}
+          credits={work.credits}
+          location={work.location}
+          year={work.year}
+          description={work.description}
+          link={work.link}
+          trailer={work.trailer}
+          awards={work.awards}
+          posterImage={work.posterImage}
+          posterWidth={getPosterWidth()}
+          awardsWidth={getAwardsWidth()}
+          onBackgroundClick={handleBackgroundClick}
+        />
+      </div>
     </main>
   );
 }

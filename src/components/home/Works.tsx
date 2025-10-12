@@ -4,17 +4,38 @@ import Link from "next/link";
 const works = [
   {
     id: 1,
-    slug: "work-01",
-    title: "Project One",
-    description: "Description for project one",
-    thumbnail: "/images/works/works-placeholder.jpg",
+    slug: "the-unknown-soldier",
+    title: "The Unknown Soldier",
+    description: "Documentary · Short · Drama",
+    thumbnail: "/images/works/the-unknown-soldier/unknown-soldier-placeholder.jpg",
   },
   {
     id: 2,
-    slug: "work-02",
-    title: "Project Two",
-    description: "Description for project two",
-    thumbnail: "/images/works/works-placeholder.jpg",
+    slug: "the-war-of-raya-sinitsina",
+    title: "The War of Raya Sinitsina",
+    description: "Documentary · Biography",
+    thumbnail: "/images/works/the-war-of-raya-sinitsina/war-of-raya-cover.jpg",
+  },
+  {
+    id: 3,
+    slug: "the-first-lady",
+    title: "The First Lady",
+    description: "Documentary",
+    thumbnail: "/images/works/the-first-lady/first-lady-placeholder.jpg",
+  },
+  {
+    id: 4,
+    slug: "julian-edelman",
+    title: "100% Julian Edelman",
+    description: "Documentary",
+    thumbnail: "/images/works/julian-edelman/julian-edelman-placeholder.jpg",
+  },
+  {
+    id: 5,
+    slug: "kuya-noy",
+    title: "Kuya Noy",
+    description: "Documentary",
+    thumbnail: "/images/works/kuya-noy/kuya-noy-placeholder.jpg",
   },
 ];
 

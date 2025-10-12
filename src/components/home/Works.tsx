@@ -20,7 +20,7 @@ const works = [
 
 export default function Works() {
   return (
-    <section className="w-full py-20 px-4 bg-background">
+    <section id="works" className="w-full py-20 px-4 bg-background">
       <div className="max-w-7xl mx-auto">
         <h2 className="text-h1 mb-12 text-center text-foreground">Works</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

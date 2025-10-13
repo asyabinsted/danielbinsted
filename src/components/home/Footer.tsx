@@ -116,7 +116,7 @@ export default function Footer() {
                 href="mailto:daniel.binsted@gmail.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-body block hover:underline"
+                className="text-body block footer-link"
               >
                 daniel.binsted@gmail.com
               </a>
@@ -124,7 +124,7 @@ export default function Footer() {
                 href="https://wa.me/972524306873"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-body block hover:underline"
+                className="text-body block footer-link"
               >
                 +972-524306873
               </a>
@@ -139,7 +139,7 @@ export default function Footer() {
                 href="https://www.linkedin.com/in/daniel-binsted-b1b2a0a6/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-body block hover:underline"
+                className="text-body block footer-link"
               >
                 Linkedin
               </a>
@@ -147,7 +147,7 @@ export default function Footer() {
                 href="https://www.imdb.com/name/nm6474957/?ref_=ext_shr_lnk"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-body block hover:underline"
+                className="text-body block footer-link"
               >
                 Imdb
               </a>

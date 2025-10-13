@@ -155,7 +155,7 @@ export default function WorkVideoPlayer({
             </div>
 
             {/* Center - Role (4 columns) */}
-            <div className="col-span-4 text-center">
+            <div className="col-span-4">
               <p className="text-supporting text-foreground">{role}</p>
             </div>
 

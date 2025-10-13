@@ -74,6 +74,13 @@ export default function WorkInformation({
             {/* Metadata - 100% opacity */}
             <p className="text-body text-foreground">{metadata}</p>
             
+            {/* Location & Year - Show right after metadata for projects WITH poster */}
+            {posterImage && (location || year) && (
+              <p className="text-body text-foreground">
+                {location}{year && location ? ' · ' : ''}{year}
+              </p>
+            )}
+            
             {/* Credits - 100% opacity */}
             <div className="space-y-2">
               {credits.map((credit, index) => (
@@ -82,9 +89,6 @@ export default function WorkInformation({
                 </p>
               ))}
             </div>
-            
-            {/* Location & Year - 100% opacity */}
-            <p className="text-body text-foreground">{location} · {year}</p>
             
             {/* Description - 100% opacity */}
             <p className="text-body text-foreground leading-relaxed">
@@ -133,6 +137,13 @@ export default function WorkInformation({
                   </div>
                 ))}
               </div>
+            )}
+            
+            {/* Location & Year - Show here only for projects WITHOUT poster (like Riverside) */}
+            {!posterImage && (location || year) && (
+              <p className="text-body text-foreground">
+                {location}{year && location ? ' · ' : ''}{year}
+              </p>
             )}
           </div>
         </div>

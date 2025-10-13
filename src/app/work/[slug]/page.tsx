@@ -42,6 +42,17 @@ export default function WorkDetail({ params }: { params: { slug: string } }) {
 
   const getAwardsWidth = () => {
     if (params.slug === 'julian-edelman') return 120;
+    if (params.slug === 'riverside-magic-clips') return 140;
+    if (params.slug === 'riverside-ai-transcriptions') return 140;
+    if (params.slug === 'riverside-masterclass') return 140;
+    if (params.slug === 'riverside-paid-social-01') return 140;
+    if (params.slug === 'riverside-paid-social-02') return 140;
+    if (params.slug === 'fiverr') return 100;
+    if (params.slug === 'monday') return 180;
+    if (params.slug === 'succulent-sessions') return 140;
+    if (params.slug === 'mixtiles-01') return 140;
+    if (params.slug === 'mixtiles-02') return 140;
+    if (params.slug === 'echelonn-ai') return 140;
     return 160; // Default width
   };
 

@@ -26,24 +26,6 @@ const works: Work[] = [
   },
   {
     id: 2,
-    slug: "mini-dv",
-    title: "Mini DV",
-    genre: "Documentary",
-    role: "Cinematographer",
-    thumbnail: "/images/works/mini-dv/mini-dv-placeholder.jpg",
-    videoSrc: "/videos/works/mini-dv/mini-dv.mp4",
-  },
-  {
-    id: 3,
-    slug: "empty-spaces",
-    title: "Empty Spaces",
-    genre: "Drama",
-    role: "Writer, co-creator",
-    thumbnail: "/images/works/empty-spaces/empty-spaces-placeholder.jpg",
-    videoSrc: "/videos/works/empty-spaces/empty-spaces.mp4",
-  },
-  {
-    id: 4,
     slug: "the-war-of-raya-sinitsina",
     title: "The War of Raya Sinitsina",
     genre: "Documentary",
@@ -52,12 +34,30 @@ const works: Work[] = [
     videoSrc: "/videos/works/the-war-of-raya-sinitsina/war-of-raya.mp4",
   },
   {
-    id: 5,
+    id: 3,
+    slug: "mini-dv",
+    title: "Mini DV",
+    genre: "Documentary",
+    role: "Cinematographer",
+    thumbnail: "/images/works/mini-dv/mini-dv-placeholder.jpg",
+    videoSrc: "/videos/works/mini-dv/mini-dv.mp4",
+  },
+  {
+    id: 4,
     slug: "julian-edelman",
     title: "100% Julian Edelman",
     genre: "Documentary",
     role: "Second Unit Cinematographer",
     thumbnail: "/images/works/julian-edelman/julian-edelman-placeholder.jpg",
+  },
+  {
+    id: 5,
+    slug: "empty-spaces",
+    title: "Empty Spaces",
+    genre: "Drama",
+    role: "Writer, co-creator",
+    thumbnail: "/images/works/empty-spaces/empty-spaces-placeholder.jpg",
+    videoSrc: "/videos/works/empty-spaces/empty-spaces.mp4",
   },
   {
     id: 6,
@@ -84,6 +84,94 @@ const works: Work[] = [
     role: "Director, writer",
     thumbnail: "/images/works/the-postman-in-underwear/postman-placeholder.jpg",
     videoSrc: "/videos/works/the-postman-in-underwear/postman.mp4",
+  },
+  {
+    id: 9,
+    slug: "riverside-magic-clips",
+    title: "Riverside.fm",
+    genre: "Branded campaign",
+    role: "Director, Producer & Video Editor",
+    thumbnail: "/images/works/riverside-magic-clips/magic-clips-placeholder.jpg",
+  },
+  {
+    id: 10,
+    slug: "riverside-ai-transcriptions",
+    title: "Riverside.fm",
+    genre: "Promotional video",
+    role: "Writer, Producer, Director & Video Editor",
+    thumbnail: "/images/works/riverside-ai-transcriptions/ai-transcriptions-placeholder.jpg",
+  },
+  {
+    id: 11,
+    slug: "fiverr",
+    title: "Fiverr",
+    genre: "Branded content",
+    role: "Director, Producer, Writer, Editor & Cinematographer",
+    thumbnail: "/images/works/fiverr/fiverr-placeholder.jpg",
+  },
+  {
+    id: 12,
+    slug: "riverside-masterclass",
+    title: "Master the Art of Podcasting",
+    genre: "Educational series",
+    role: "Producer & Video Editor",
+    thumbnail: "/images/works/riverside-masterclass/riverside-masterclass-placeholder.jpg",
+  },
+  {
+    id: 13,
+    slug: "monday",
+    title: "Monday.com",
+    genre: "Product video",
+    role: "Cinematographer",
+    thumbnail: "/images/works/monday/monday-placeholder.jpg",
+  },
+  {
+    id: 14,
+    slug: "succulent-sessions",
+    title: "Succulent Sessions",
+    genre: "Live music video",
+    role: "Cinematographer",
+    thumbnail: "/images/works/succulent-sessions/succulent-sessions-placeholder.jpg",
+  },
+  {
+    id: 15,
+    slug: "riverside-paid-social-01",
+    title: "Riverside.fm",
+    genre: "Paid Social Campaign",
+    role: "Director & Editor",
+    thumbnail: "/images/works/riverside-paid-social-01/riverside-01-placeholder.jpg",
+  },
+  {
+    id: 16,
+    slug: "riverside-paid-social-02",
+    title: "Riverside.fm",
+    genre: "Paid Social Campaign",
+    role: "Director & Editor",
+    thumbnail: "/images/works/riverside-paid-social-02/riverside-02-placeholder.jpg",
+  },
+  {
+    id: 17,
+    slug: "mixtiles-01",
+    title: "Mixtiles",
+    genre: "Performance Marketing Campaign",
+    role: "Editor",
+    thumbnail: "/images/works/mixtiles-01/mixtiles-01-placeholder.jpg",
+  },
+  {
+    id: 18,
+    slug: "mixtiles-02",
+    title: "Mixtiles",
+    genre: "Performance Marketing Campaign",
+    role: "Editor",
+    thumbnail: "/images/works/mixtiles-02/mixtiles-02-placeholder.jpg",
+  },
+  {
+    id: 19,
+    slug: "echelonn-ai",
+    title: "Echelonn AI",
+    genre: "Brand Awareness Video",
+    role: "Director & Editor",
+    thumbnail: "/images/works/echelonn-ai/echelon-ai-placeholder.jpg",
   },
 ];
 
@@ -241,17 +329,17 @@ export default function Works() {
                   className="absolute -top-[29px] left-0 right-0 z-10 cursor-pointer pb-[21px]"
                 >
                   <div className="grid grid-cols-12 gap-5">
-                    <div className="col-span-3">
-                      <p className="text-body text-foreground">{hoveredWork.genre}</p>
+                    <div className="col-span-3 overflow-visible">
+                      <p className="text-body text-foreground whitespace-nowrap overflow-visible">{hoveredWork.genre}</p>
                     </div>
-                    <div className="col-span-3">
-                      <p className="text-body text-foreground">{hoveredWork.title}</p>
+                    <div className="col-span-3 overflow-visible">
+                      <p className="text-body text-foreground whitespace-nowrap overflow-visible">{hoveredWork.title}</p>
                     </div>
-                    <div className="col-span-3">
-                      <p className="text-body text-foreground">{hoveredWork.role}</p>
+                    <div className="col-span-3 overflow-visible">
+                      <p className="text-body text-foreground whitespace-nowrap overflow-visible">{hoveredWork.role}</p>
                     </div>
-                    <div className="col-span-3 text-right">
-                      <p className="text-body text-foreground">View</p>
+                    <div className="col-span-3 text-right overflow-visible">
+                      <p className="text-body text-foreground whitespace-nowrap overflow-visible">View</p>
                     </div>
                   </div>
                 </Link>

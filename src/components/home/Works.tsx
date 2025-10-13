@@ -310,11 +310,11 @@ export default function Works() {
   const hoveredWork = works.find(w => w.id === hoveredWorkId);
 
   return (
-    <section id="works" className="w-full py-20 bg-background">
+    <section id="works" className="w-full py-32 bg-background">
       <div className="w-full px-5">
         {/* Removed "Works" title */}
         
-        <div className="space-y-16">
+        <div className="space-y-24">
           {rows.map((row, rowIndex) => (
             <div 
               key={rowIndex} 

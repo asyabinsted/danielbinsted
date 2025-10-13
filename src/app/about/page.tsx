@@ -70,61 +70,55 @@ export default function About() {
         {/* Columns 10-12: Clients */}
         <div className="col-span-3">
           <h3 className="text-body uppercase mb-8">CLIENTS</h3>
-          <div className="space-y-6">
-            <div>
-              <Image
-                src="/assets/works/riverside-magic-clips/logo/riverside-logo.png"
-                alt="Riverside"
-                width={140}
-                height={40}
-                className="h-auto"
-              />
-            </div>
-            <div>
-              <Image
-                src="/assets/works/mixtiles-01/logo/mixtiles-logo.png"
-                alt="Mixtiles"
-                width={140}
-                height={40}
-                className="h-auto"
-              />
-            </div>
-            <div>
-              <Image
-                src="/assets/works/fiverr/logo/fiverr-logo.png"
-                alt="Fiverr"
-                width={100}
-                height={40}
-                className="h-auto"
-              />
-            </div>
-            <div>
-              <Image
-                src="/assets/works/monday/logo/monday-logo.png"
-                alt="Monday.com"
-                width={180}
-                height={40}
-                className="h-auto"
-              />
-            </div>
-            <div>
-              <Image
-                src="/assets/works/succulent-sessions/logo/succulent-sessions-logo.png"
-                alt="Succulent Sessions"
-                width={140}
-                height={40}
-                className="h-auto"
-              />
-            </div>
-            <div>
-              <Image
-                src="/assets/works/echelonn-ai/logo/echelonn-logo.png"
-                alt="Echelonn AI"
-                width={140}
-                height={40}
-                className="h-auto"
-              />
-            </div>
+          <div className="space-y-2 flex flex-col items-start">
+            <a
+              href="https://riverside.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-body footer-link"
+            >
+              Riverside.fm
+            </a>
+            <a
+              href="https://www.mixtiles.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-body footer-link"
+            >
+              Mixtiles
+            </a>
+            <a
+              href="https://www.fiverr.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-body footer-link"
+            >
+              Fiverr
+            </a>
+            <a
+              href="https://monday.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-body footer-link"
+            >
+              Monday.com
+            </a>
+            <a
+              href="https://youtube.com/@succulentsessions?si=c0xs1-0qdLFl5bWA"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-body footer-link"
+            >
+              Succulent Sessions
+            </a>
+            <a
+              href="https://www.echelonn.io/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-body footer-link"
+            >
+              Echelonn
+            </a>
           </div>
         </div>
       </div>

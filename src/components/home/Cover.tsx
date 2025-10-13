@@ -15,8 +15,8 @@ export default function Cover() {
         <source src="/videos/showreel/showreel.mp4" type="video/mp4" />
       </video>
       
-      {/* Gradient Overlay - Transparent at top, darker at bottom for text visibility */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent from-40% via-background/40 via-60% to-background/90 to-100%" />
+      {/* Gradient Overlay - Transparent at top, 100% opacity at bottom for text visibility */}
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent from-40% via-background/40 via-60% to-background to-100%" />
       
       {/* Content */}
       <div className="relative z-10 h-full flex items-end pb-5">

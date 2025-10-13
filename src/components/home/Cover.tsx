@@ -9,6 +9,7 @@ export default function Cover() {
         loop
         muted
         playsInline
+        poster="/images/cover/cover-placeholder.jpg"
         className="absolute inset-0 w-full h-full object-cover"
       >
         <source src="/videos/showreel/showreel.mp4" type="video/mp4" />

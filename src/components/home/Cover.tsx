@@ -18,7 +18,7 @@ export default function Cover() {
       <div className="absolute inset-0 bg-gradient-to-b from-transparent from-50% to-background/60 to-100%" />
       
       {/* Content */}
-      <div className="relative h-full flex items-end pb-20">
+      <div className="relative h-full flex items-end pb-5">
         <div className="container-grid w-full">
           {/* Text occupies columns 6-11 */}
           <div className="col-start-6 col-span-6">
@@ -32,7 +32,7 @@ export default function Cover() {
             
             <Link 
               href="/about" 
-              className="inline-block text-supporting hover:opacity-70 transition-opacity"
+              className="inline-block text-supporting footer-link"
             >
               Learn more →
             </Link>

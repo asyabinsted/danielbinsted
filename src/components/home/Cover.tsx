@@ -14,11 +14,11 @@ export default function Cover() {
         <source src="/videos/showreel/showreel.mp4" type="video/mp4" />
       </video>
       
-      {/* Gradient Overlay - Transparent at top, 60% opacity at bottom */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent from-50% to-background/60 to-100%" />
+      {/* Gradient Overlay - Transparent at top, darker at bottom for text visibility */}
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent from-40% via-background/40 via-60% to-background/90 to-100%" />
       
       {/* Content */}
-      <div className="relative h-full flex items-end pb-5">
+      <div className="relative z-10 h-full flex items-end pb-5">
         <div className="container-grid w-full">
           {/* Text occupies columns 6-11 */}
           <div className="col-start-6 col-span-6">

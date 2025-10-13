@@ -22,7 +22,7 @@ export default function Cover() {
         <div className="container-grid w-full">
           {/* Text occupies columns 6-11 */}
           <div className="col-start-6 col-span-6">
-            <h1 className="text-h1 text-foreground mb-8">
+            <h1 className="text-body text-foreground mb-8">
               I'm a filmmaker passionate about visual storytelling that moves people. 
               My experience spans commercial work, narrative film, and digital advertising 
               – from editing UGC campaigns to filming award-winning documentaries. I bring 

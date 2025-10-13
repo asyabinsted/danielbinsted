@@ -310,7 +310,7 @@ export default function Works() {
   const hoveredWork = works.find(w => w.id === hoveredWorkId);
 
   return (
-    <section id="works" className="w-full py-48 bg-background">
+    <section id="works" className="w-full pt-48 pb-24 bg-background">
       <div className="w-full px-5">
         {/* Removed "Works" title */}
         

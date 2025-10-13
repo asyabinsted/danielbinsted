@@ -36,6 +36,7 @@ export default function WorkDetail({ params }: { params: { slug: string } }) {
   // Determine custom widths based on slug
   const getPosterWidth = () => {
     if (params.slug === 'the-war-of-raya-sinitsina') return 200;
+    if (params.slug === 'the-postman-in-underwear') return 240;
     return 120; // Default width
   };
 

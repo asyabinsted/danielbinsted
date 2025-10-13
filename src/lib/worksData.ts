@@ -126,6 +126,59 @@ export const works: Record<string, WorkData> = {
       { src: '/assets/works/kuya-noy/awards/kuya-noy-award-01.svg', alt: 'Award 1' },
     ],
   },
+  'empty-spaces': {
+    title: 'Empty Spaces',
+    metadata: 'Short · Drama',
+    role: 'Writer, co-creator',
+    videoSrc: '/videos/works/empty-spaces/empty-spaces.mp4',
+    posterSrc: '/images/works/empty-spaces/empty-spaces-placeholder.jpg',
+    posterImage: '/images/works/empty-spaces/empty-spaces-poster.jpg',
+    credits: [
+      'Director: Ben Ziv',
+      'Writer, co-creator: Daniel Binsted',
+    ],
+    location: 'Israel',
+    year: '2020',
+    description: 'Nati, an officer in the IDF (Israel Defense Forces) is heading south with three soldiers in order to perform a very complicated mission.',
+    link: 'https://www.imdb.com/title/tt13772656/',
+    awards: [
+      { src: '/assets/works/empty-spaces/awards/empty-spaces-award-01.svg', alt: 'Award 1' },
+    ],
+  },
+  'mini-dv': {
+    title: 'Mini DV',
+    metadata: 'Documentary',
+    role: 'Cinematographer',
+    videoSrc: '/videos/works/mini-dv/mini-dv.mp4',
+    posterSrc: '/images/works/mini-dv/mini-dv-placeholder.jpg',
+    posterImage: '/images/works/mini-dv/mini-dv-poster.jpg',
+    credits: [
+      'Director: Shauly Melamed',
+      'Cinematographer: Daniel Binsted',
+    ],
+    location: 'Israel',
+    year: '2022',
+    description: 'Home videos shot during his childhood send director Shauly Melamed on a downward spiral, inspiring a search for other LGBTQ adults who documented themselves during puberty. Shauly finds many such individuals who, in their youth, exposed their non-conforming identities without understanding the secrets the camera beheld. Tom, transgender, grew up in the Ultra-Orthodox town of Safed and unwittingly documented his journey of self-discovery; Betty, born to Iranian immigrants, obsessively filmed her intimate relationships with girlfriends; Rumia found her roots in drag as her mother came out of the closet; Shauly explored his own homosexuality in the aftermath of his father\'s sudden death. Through watching their childhood films, the four LGBTQ adults are forced to confront the most formative people and experiences from their past.',
+    link: 'https://www.youtube.com/watch?v=bH2LkblS_yI',
+    awards: [
+      { src: '/assets/works/mini-dv/awards/mini-dv-award-01.svg', alt: 'Award 1' },
+    ],
+  },
+  'the-postman-in-underwear': {
+    title: 'The Postman in Underwear',
+    metadata: 'Short · Comedy · Drama',
+    role: 'Director, writer',
+    videoSrc: '/videos/works/the-postman-in-underwear/postman.mp4',
+    posterSrc: '/images/works/the-postman-in-underwear/postman-placeholder.jpg',
+    posterImage: '/images/works/the-postman-in-underwear/postman-poster.jpg',
+    credits: [
+      'Director, writer: Daniel Binsted',
+    ],
+    location: 'Israel',
+    year: '2016',
+    description: 'Two brothers tell the story of an eccentric postman who falls in love for the first time in his life. In an attempt to help him express his love they embark on a journey in which they will experience the difference between fantasy and real love.',
+    link: 'https://www.imdb.com/title/tt5144542/',
+  },
   // Future projects will use their own descriptive slugs
   // Example: 'project-name-slug': { ... }
 };

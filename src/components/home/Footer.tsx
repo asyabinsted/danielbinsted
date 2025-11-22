@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { toast, Toaster } from 'sonner';
+import RollingText from "@/components/RollingText";
 
 export default function Footer() {
   const [currentTime, setCurrentTime] = useState('');
@@ -207,7 +208,7 @@ export default function Footer() {
           onClick={scrollToTop}
           className="text-supporting text-foreground cursor-pointer footer-back-to-top"
         >
-          ↑ Back to top
+          <RollingText text="↑ Back to top" />
         </button>
       </div>
 

@@ -40,6 +40,7 @@ const works: Work[] = [
     genre: "Documentary",
     role: "Cinematographer",
     thumbnail: "/images/works/mini-dv/mini-dv-placeholder.jpg",
+    videoSrc: "/videos/works/mini-dv/mini-dv.mp4",
   },
   {
     id: 4,
@@ -48,6 +49,7 @@ const works: Work[] = [
     genre: "Documentary",
     role: "Second Unit Cinematographer",
     thumbnail: "/images/works/julian-edelman/julian-edelman-placeholder.jpg",
+    videoSrc: "/videos/works/julian-edelman/julian-edelman.mp4",
   },
   {
     id: 5,
@@ -127,6 +129,7 @@ const works: Work[] = [
     genre: "Product video",
     role: "Cinematographer",
     thumbnail: "/images/works/monday/monday-placeholder.jpg",
+    videoSrc: "/videos/works/monday/monday.mp4",
   },
   {
     id: 14,

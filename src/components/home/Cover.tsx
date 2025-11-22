@@ -1,6 +1,15 @@
+'use client';
+
 import Link from "next/link";
+import RollingText from "@/components/RollingText";
 
 export default function Cover() {
+  const scrollToWorks = () => {
+    const worksSection = document.getElementById('works');
+    if (worksSection) {
+      worksSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
   return (
     <section className="relative w-full h-screen">
       {/* Background Video */}
@@ -31,12 +40,12 @@ export default function Cover() {
               that supports both brand goals and audience engagement.
             </h1>
             
-            <Link 
-              href="/about" 
-              className="inline-block text-supporting footer-link"
+            <button
+              onClick={scrollToWorks}
+              className="inline-block text-supporting footer-link cursor-pointer"
             >
-              Learn more →
-            </Link>
+              <RollingText text="↓ Scroll down" />
+            </button>
           </div>
         </div>
       </div>

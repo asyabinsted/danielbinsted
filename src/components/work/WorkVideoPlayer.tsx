@@ -182,7 +182,7 @@ export default function WorkVideoPlayer({
               
               {/* Second line: Sound + Timer */}
               <div className="flex items-center gap-2">
-                <span className="text-supporting text-foreground">Sound</span>
+                <span className="text-supporting text-foreground hidden md:inline">Sound</span>
                 <button
                   onClick={toggleMute}
                   className="w-4 h-4 flex items-center justify-center"

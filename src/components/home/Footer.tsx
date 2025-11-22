@@ -112,7 +112,7 @@ export default function Footer() {
           {/* Mobile: Stack vertically, Desktop: Row layout */}
           
           {/* Column 1 - CONTACTS */}
-          <div className="col-span-12 md:col-span-2 mb-8 md:mb-0">
+          <div className="col-span-12 md:col-span-2 mb-12 md:mb-0">
             <h3 className="text-body uppercase mb-4">CONTACTS</h3>
             <div className="space-y-2 flex flex-col items-start">
               <a
@@ -135,7 +135,7 @@ export default function Footer() {
           </div>
 
           {/* Column 2 - LINKS */}
-          <div className="col-span-12 md:col-span-2 mb-8 md:mb-0">
+          <div className="col-span-12 md:col-span-2 mb-12 md:mb-0">
             <h3 className="text-body uppercase mb-4">LINKS</h3>
             <div className="space-y-2 flex flex-col items-start">
               <a
@@ -158,7 +158,7 @@ export default function Footer() {
           </div>
 
           {/* Column 3 - BASED */}
-          <div className="col-span-12 md:col-span-2 mb-8 md:mb-0">
+          <div className="col-span-12 md:col-span-2 mb-12 md:mb-0">
             <h3 className="text-body uppercase mb-4">BASED</h3>
             <div className="space-y-2">
               <p className="text-body">Worldwide</p>
@@ -180,6 +180,12 @@ export default function Footer() {
                 type="text"
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
+                onFocus={(e) => {
+                  // Scroll input into view when keyboard opens on mobile
+                  setTimeout(() => {
+                    e.target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                  }, 300);
+                }}
                 placeholder="Hi Daniel..."
                 className="flex-1 bg-transparent border border-foreground/20 text-foreground text-body px-4 h-9 focus:outline-none focus:border-foreground/40 placeholder:text-supporting placeholder:text-foreground/40"
                 style={{

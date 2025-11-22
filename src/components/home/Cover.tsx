@@ -28,10 +28,10 @@ export default function Cover() {
       <div className="absolute inset-0 bg-gradient-to-b from-transparent from-40% via-background/40 via-60% to-background to-100%" />
       
       {/* Content */}
-      <div className="relative z-10 h-full flex items-end pb-5">
+      <div className="relative z-10 h-full flex items-end pb-5 px-5">
         <div className="container-grid w-full">
           {/* Text occupies full width on mobile, columns 6-11 on desktop */}
-          <div className="col-span-12 md:col-start-6 md:col-span-6 px-5 md:px-0">
+          <div className="col-span-12 md:col-start-6 md:col-span-6">
             <h1 className="text-body text-foreground mb-8" style={{ fontSize: '18px', lineHeight: '1.3', fontWeight: '400' }}>
               Daniel is a filmmaker passionate about visual storytelling that moves people. 
               His experience spans commercial work, narrative film, and digital advertising, 

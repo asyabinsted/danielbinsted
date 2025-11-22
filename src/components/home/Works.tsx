@@ -12,7 +12,6 @@ interface Work {
   role: string;
   thumbnail: string;
   videoSrc?: string;
-  isVertical?: boolean;
 }
 
 const works: Work[] = [
@@ -163,7 +162,6 @@ const works: Work[] = [
     role: "Editor",
     thumbnail: "/images/works/mixtiles-01/mixtiles-01-placeholder.jpg",
     videoSrc: "/videos/works/mixtiles-01/mixtiles-01.mp4",
-    isVertical: true,
   },
   {
     id: 18,
@@ -172,7 +170,6 @@ const works: Work[] = [
     genre: "Performance Marketing Campaign",
     role: "Editor",
     thumbnail: "/images/works/mixtiles-02/mixtiles-02-placeholder.jpg",
-    isVertical: true,
   },
   {
     id: 19,
@@ -182,7 +179,6 @@ const works: Work[] = [
     role: "Director & Editor",
     thumbnail: "/images/works/echelonn-ai/echelonn-ai-placeholder.jpg",
     videoSrc: "/videos/works/echelonn-ai/echelonn-ai.mp4",
-    isVertical: true,
   },
 ];
 
@@ -254,7 +250,7 @@ function WorkItem({ work, isHovered, isDimmed, onMouseEnter, onMouseLeave }: Wor
         onMouseLeave={onMouseLeave}
         className="block"
       >
-        <div className={`relative w-full cursor-pointer overflow-hidden ${work.isVertical ? 'aspect-[9/16]' : 'aspect-[16/9]'}`}>
+        <div className="relative w-full aspect-[16/9] cursor-pointer overflow-hidden">
           {/* Placeholder Image - always visible as background */}
           <Image
             src={work.thumbnail}

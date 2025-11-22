@@ -315,12 +315,12 @@ export const works: Record<string, WorkData> = {
       { src: '/assets/works/riverside-magic-clips/logo/riverside-logo.png', alt: 'Riverside.fm Logo' },
     ],
   },
-  'mixtiles-01': {
+  'mixtiles': {
     title: 'Mixtiles',
     metadata: 'Performance Marketing Campaign',
     role: 'Editor',
-    videoSrc: '/videos/works/mixtiles-01/mixtiles-01.mp4',
-    posterSrc: '/images/works/mixtiles-01/mixtiles-01-placeholder.jpg',
+    videoSrc: '/videos/works/mixtiles/mixtiles.mp4',
+    posterSrc: '/images/works/mixtiles/mixtiles-placeholder.jpg',
     credits: [
       'Editor: Daniel Binsted',
     ],
@@ -329,24 +329,7 @@ export const works: Record<string, WorkData> = {
     description: 'Edited short-form ads for Meta platforms (Facebook & Instagram), combining storytelling, visual rhythm, and emotional triggers to maximize engagement and conversions.',
     link: 'https://www.facebook.com/mixtiles/videos/1232390408298314/?vh=e&mibextid=wwXIfr&rdid=M7pu5BwEjo3O5SHq',
     awards: [
-      { src: '/assets/works/mixtiles-01/logo/mixtiles-logo.png', alt: 'Mixtiles Logo' },
-    ],
-  },
-  'mixtiles-02': {
-    title: 'Mixtiles',
-    metadata: 'Performance Marketing Campaign',
-    role: 'Editor',
-    videoSrc: '/videos/works/mixtiles-02/mixtiles-02.mp4',
-    posterSrc: '/images/works/mixtiles-02/mixtiles-02-placeholder.jpg',
-    credits: [
-      'Editor: Daniel Binsted',
-    ],
-    location: 'Mixtiles are printed framed pictures that stick to any wall, leave no damage, and can be moved around.',
-    year: '',
-    description: 'Edited short-form ads for Meta platforms (Facebook & Instagram), combining storytelling, visual rhythm, and emotional triggers to maximize engagement and conversions.',
-    link: 'https://www.instagram.com/p/DCwxobQAu4S/',
-    awards: [
-      { src: '/assets/works/mixtiles-01/logo/mixtiles-logo.png', alt: 'Mixtiles Logo' },
+      { src: '/assets/works/mixtiles/logo/mixtiles-logo.png', alt: 'Mixtiles Logo' },
     ],
   },
   'echelonn-ai': {

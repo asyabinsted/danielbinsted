@@ -33,9 +33,9 @@ export default function Cover() {
           {/* Text occupies columns 6-11 */}
           <div className="col-start-6 col-span-6">
             <h1 className="text-body text-foreground mb-8">
-              I'm a filmmaker passionate about visual storytelling that moves people. 
-              My experience spans commercial work, narrative film, and digital advertising 
-              – from editing UGC campaigns to filming award-winning documentaries. I bring 
+              Daniel is a filmmaker passionate about visual storytelling that moves people. 
+              His experience spans commercial work, narrative film, and digital advertising, 
+              from editing UGC campaigns to filming award winning documentaries. He brings 
               a mix of creative intuition, technical expertise, and strategic thinking 
               that supports both brand goals and audience engagement.
             </h1>

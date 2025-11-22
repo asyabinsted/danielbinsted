@@ -103,7 +103,7 @@ export default function WorkInformation({
                     href={link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-body footer-link"
+                    className="text-body footer-link inline-block"
                   >
                     Link
                   </a>

@@ -310,7 +310,7 @@ export default function Works() {
   };
 
   // Group works by row (4 per row)
-  const rows: typeof works[][] = [];
+  const rows: Work[][] = [];
   for (let i = 0; i < works.length; i += 4) {
     rows.push(works.slice(i, i + 4));
   }

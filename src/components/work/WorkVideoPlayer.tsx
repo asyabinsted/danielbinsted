@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
+import RollingText from '@/components/RollingText';
 
 interface WorkVideoPlayerProps {
   videoSrc: string;
@@ -174,9 +175,9 @@ export default function WorkVideoPlayer({
               {/* First line: Information button */}
               <button
                 onClick={onInformationClick}
-                className="text-supporting text-foreground hover:text-foreground/80 transition-colors"
+                className="nav-link text-supporting text-foreground"
               >
-                Information ↓
+                <RollingText text="Information ↓" />
               </button>
               
               {/* Second line: Sound + Timer */}

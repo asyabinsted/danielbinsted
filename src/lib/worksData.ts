@@ -103,7 +103,6 @@ export const works: Record<string, WorkData> = {
     year: '2019',
     description: 'Narrated by Michael Rapaport and featuring original conversations with stars from Mark Wahlberg to Tom Brady, Snoop Dogg, Michael Strahan and Deion Sanders, the film is a look inside Julian Edelman\'s journey from major injury to Super Bowl MVP in 2019.',
     link: 'https://www.primevideo.com/detail/100-Julian-Edelman/0RV7UNH2YWEGY4ZAIZJFL0WQ7C',
-    trailer: 'https://vimeo.com/358828728?share=copy',
     awards: [
       { src: '/assets/works/julian-edelman/logo/julian-edelman-logo.png', alt: '100% Julian Edelman Logo' },
     ],

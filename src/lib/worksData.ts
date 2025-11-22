@@ -30,7 +30,7 @@ export const works: Record<string, WorkData> = {
     location: 'Israel',
     year: '2017',
     description: 'An intimate investigation of World War II soviet veteran, 92-year-old Newsak Weis or as he prefers, just Uncle Nusya. The mission is to discover a real person under the armor of medals and the role model of a hero.',
-    link: 'https://vimeo.com/191008310?share=copy',
+    link: 'https://www.imdb.com/title/tt7884288/?ref_=fn_i_15',
     awards: [
       { src: '/assets/works/the-unknown-soldier/awards/unknown-soldier-award-01.svg', alt: 'Award 1' },
       { src: '/assets/works/the-unknown-soldier/awards/unknown-soldier-award-02.svg', alt: 'Award 2' },
@@ -53,7 +53,7 @@ export const works: Record<string, WorkData> = {
     location: 'Israel',
     year: '2020',
     description: 'A young filmmaker meets and follows Raya, a 94-year-old Soviet war heroine who fought in the Siege of Leningrad. As Head of the World War II Disabled Veterans Club in her city, she introduces him to a vanishing generation in Israel. Her own fighting spirit and willpower are still fierce. As Raya faces the loss of her last comrades and her health deteriorates, the two become involved in a spiritual process that awakens the young woman within her; Through her eyes and dreams, they create their own reality in which time and age lose all meaning. Their growing closeness transforms a film about war and loss into a mystical story of love and friendship.',
-    link: 'https://vimeo.com/443519842?fl=pl&fe=sh',
+    link: 'https://www.imdb.com/title/tt13123346/',
     awards: [
       { src: '/assets/works/the-war-of-raya-sinitsina/awards/war-of-raya-award-01.svg', alt: 'Award 1' },
       { src: '/assets/works/the-war-of-raya-sinitsina/awards/war-of-raya-award-02.svg', alt: 'Award 2' },
@@ -158,7 +158,7 @@ export const works: Record<string, WorkData> = {
     location: 'Israel',
     year: '2022',
     description: 'Home videos shot during his childhood send director Shauly Melamed on a downward spiral, inspiring a search for other LGBTQ adults who documented themselves during puberty. Shauly finds many such individuals who, in their youth, exposed their non-conforming identities without understanding the secrets the camera beheld. Tom, transgender, grew up in the Ultra-Orthodox town of Safed and unwittingly documented his journey of self-discovery; Betty, born to Iranian immigrants, obsessively filmed her intimate relationships with girlfriends; Rumia found her roots in drag as her mother came out of the closet; Shauly explored his own homosexuality in the aftermath of his father\'s sudden death. Through watching their childhood films, the four LGBTQ adults are forced to confront the most formative people and experiences from their past.',
-    link: 'https://www.youtube.com/watch?v=bH2LkblS_yI',
+    link: 'https://www.imdb.com/title/tt20871026/awards/?ref_=tt_awd',
     awards: [
       { src: '/assets/works/mini-dv/awards/mini-dv-award-01.svg', alt: 'Award 1' },
     ],
@@ -177,6 +177,16 @@ export const works: Record<string, WorkData> = {
     year: '2016',
     description: 'Two brothers tell the story of an eccentric postman who falls in love for the first time in his life. In an attempt to help him express his love they embark on a journey in which they will experience the difference between fantasy and real love.',
     link: 'https://www.imdb.com/title/tt5144542/',
+    awards: [
+      { src: '/assets/works/the-postman-in-underwear/awards/postman-award-01.svg', alt: 'Award 1' },
+      { src: '/assets/works/the-postman-in-underwear/awards/postman-award-02.svg', alt: 'Award 2' },
+      { src: '/assets/works/the-postman-in-underwear/awards/postman-award-03.svg', alt: 'Award 3' },
+      { src: '/assets/works/the-postman-in-underwear/awards/postman-award-04.svg', alt: 'Award 4' },
+      { src: '/assets/works/the-postman-in-underwear/awards/postman-award-05.svg', alt: 'Award 5' },
+      { src: '/assets/works/the-postman-in-underwear/awards/postman-award-06.svg', alt: 'Award 6' },
+      { src: '/assets/works/the-postman-in-underwear/awards/postman-award-07.svg', alt: 'Award 7' },
+      { src: '/assets/works/the-postman-in-underwear/awards/postman-award-08.svg', alt: 'Award 8' },
+    ],
   },
   'riverside-magic-clips': {
     title: 'Riverside.fm',
@@ -187,10 +197,10 @@ export const works: Record<string, WorkData> = {
     credits: [
       'Director, Producer & Video Editor: Daniel Binsted',
     ],
-    location: 'Riverside, a platform for recording podcasts and video interviews, facilitates remote recording with studio-quality results.',
+    location: 'Riverside, a platform for recording podcasts and video interviews, facilitates remote recording with studio-quality results. https://riverside.com/',
     year: '',
     description: 'Branded campaign for Riverside.fm\'s AI-powered video clipping tool.',
-    link: 'https://vimeo.com/848132477?share=copy',
+    link: 'https://riverside.com/',
     awards: [
       { src: '/assets/works/riverside-magic-clips/logo/riverside-logo.png', alt: 'Riverside.fm Logo' },
     ],
@@ -204,10 +214,10 @@ export const works: Record<string, WorkData> = {
     credits: [
       'Writer, Producer, Director & Video Editor: Daniel Binsted',
     ],
-    location: 'Riverside, a platform for recording podcasts and video interviews, facilitates remote recording with studio-quality results.',
+    location: 'Riverside, a platform for recording podcasts and video interviews, facilitates remote recording with studio-quality results. https://riverside.com/',
     year: '',
     description: 'Promotional video for Riverside.fm\'s AI transcription service.',
-    link: 'https://vimeo.com/854431027?share=copy',
+    link: 'https://riverside.com/',
     awards: [
       { src: '/assets/works/riverside-magic-clips/logo/riverside-logo.png', alt: 'Riverside.fm Logo' },
     ],
@@ -221,10 +231,10 @@ export const works: Record<string, WorkData> = {
     credits: [
       'Director, Producer, Writer, Editor & Cinematographer: Daniel Binsted',
     ],
-    location: 'Fiverr Empower is a program dedicated to helping people with disabilities build their professional experience and their portfolio of work by giving them opportunities to find work as freelancers through the Fiverr platform.',
+    location: 'Fiverr Empower is a program dedicated to helping people with disabilities build their professional experience and their portfolio of work by giving them opportunities to find work as freelancers through the Fiverr platform. https://www.fiverr.com',
     year: '',
     description: 'A short video describing Fiverr\'s unique program, Fiverr Empower, through the story of Danielle Ongo-Levi.',
-    link: 'https://vimeo.com/553941607?share=copy',
+    link: 'https://www.fiverr.com',
     awards: [
       { src: '/assets/works/fiverr/logo/fiverr-logo.png', alt: 'Fiverr Logo' },
     ],
@@ -238,10 +248,10 @@ export const works: Record<string, WorkData> = {
     credits: [
       'Producer & Video Editor: Daniel Binsted',
     ],
-    location: 'Riverside, a platform for recording podcasts and video interviews, facilitates remote recording with studio-quality results.',
+    location: 'Riverside, a platform for recording podcasts and video interviews, facilitates remote recording with studio-quality results. https://riverside.com/',
     year: '',
     description: 'Educational series for Riverside.fm\'s podcasting platform.',
-    link: 'https://youtu.be/tRJXHA28CT4?si=GJuHZf73k2M7q6_-',
+    link: 'https://riverside.com/',
     awards: [
       { src: '/assets/works/riverside-magic-clips/logo/riverside-logo.png', alt: 'Riverside.fm Logo' },
     ],
@@ -291,8 +301,8 @@ export const works: Record<string, WorkData> = {
     ],
     location: 'Riverside, a platform for recording podcasts and video interviews, facilitates remote recording with studio-quality results.',
     year: '',
-    description: 'Conceptualized, directed, and edited short-form ads for A/B testing across Meta and YouTube, combining creator collaborations with performance-driven storytelling for podcasting tools.',
-    link: 'https://youtu.be/FLDgpkM3HDE?si=o4z37F9e3nxN-272',
+    description: '',
+    link: 'https://riverside.com/',
     awards: [
       { src: '/assets/works/riverside-magic-clips/logo/riverside-logo.png', alt: 'Riverside.fm Logo' },
     ],
@@ -308,8 +318,8 @@ export const works: Record<string, WorkData> = {
     ],
     location: 'Riverside, a platform for recording podcasts and video interviews, facilitates remote recording with studio-quality results.',
     year: '',
-    description: 'Conceptualized, directed, and edited short-form ads for A/B testing across Meta and YouTube, combining creator collaborations with performance-driven storytelling for podcasting tools.',
-    link: 'https://youtu.be/hNEjKuurfto?si=iOXa6ZNhPi5Lb9Uw',
+    description: '',
+    link: 'https://riverside.com/',
     awards: [
       { src: '/assets/works/riverside-magic-clips/logo/riverside-logo.png', alt: 'Riverside.fm Logo' },
     ],
@@ -325,7 +335,7 @@ export const works: Record<string, WorkData> = {
     ],
     location: 'Mixtiles are printed framed pictures that stick to any wall, leave no damage, and can be moved around.',
     year: '',
-    description: 'Edited short-form ads for Meta platforms (Facebook & Instagram), combining storytelling, visual rhythm, and emotional triggers to maximize engagement and conversions.',
+    description: '',
     link: 'https://www.facebook.com/mixtiles/videos/1232390408298314/?vh=e&mibextid=wwXIfr&rdid=M7pu5BwEjo3O5SHq',
     awards: [
       { src: '/assets/works/mixtiles/logo/mixtiles-logo.png', alt: 'Mixtiles Logo' },
@@ -333,7 +343,7 @@ export const works: Record<string, WorkData> = {
   },
   'echelonn-ai': {
     title: 'Echelonn AI',
-    metadata: 'Brand Awareness Video',
+    metadata: 'Brand Awareness Video, created using AI tools',
     role: 'Director & Editor',
     videoSrc: '/videos/works/echelonn-ai/echelonn-ai.mp4',
     posterSrc: '/images/works/echelonn-ai/echelonn-ai-placeholder.jpg',

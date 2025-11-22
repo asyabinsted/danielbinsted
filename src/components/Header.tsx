@@ -21,21 +21,34 @@ export default function Header() {
 
     const handleScroll = () => {
       const worksSection = document.getElementById("works");
-      if (!worksSection) return;
-
-      const rect = worksSection.getBoundingClientRect();
-      const viewportHeight = window.innerHeight;
+      const footerSection = document.querySelector("footer");
       
-      // Works section is active when a significant portion is visible in the viewport
-      // Start showing when top enters middle of screen, stop when bottom leaves middle
+      const viewportHeight = window.innerHeight;
       const middleOfViewport = viewportHeight / 2;
-      const isInViewport = rect.top < middleOfViewport && rect.bottom > middleOfViewport;
 
-      if (isInViewport) {
-        setActiveSection("works");
-      } else {
-        setActiveSection("");
+      // Check footer first (footer takes priority when visible)
+      if (footerSection) {
+        const footerRect = footerSection.getBoundingClientRect();
+        const isFooterInViewport = footerRect.top < middleOfViewport && footerRect.bottom > middleOfViewport;
+        
+        if (isFooterInViewport) {
+          setActiveSection("footer");
+          return;
+        }
       }
+
+      // Check works section
+      if (worksSection) {
+        const worksRect = worksSection.getBoundingClientRect();
+        const isWorksInViewport = worksRect.top < middleOfViewport && worksRect.bottom > middleOfViewport;
+        
+        if (isWorksInViewport) {
+          setActiveSection("works");
+          return;
+        }
+      }
+
+      setActiveSection("");
     };
 
     handleScroll(); // Check on mount
@@ -83,6 +96,9 @@ export default function Header() {
   const isActive = (path: string) => {
     if (path === "works") {
       return pathname === "/" && activeSection === "works";
+    }
+    if (path === "footer") {
+      return pathname === "/" && activeSection === "footer";
     }
     if (path === "/about") {
       return pathname === "/about";
@@ -137,7 +153,9 @@ export default function Header() {
             <a
               href="/#footer"
               onClick={scrollToFooter}
-              className="nav-link text-supporting text-foreground"
+              className={`nav-link text-supporting text-foreground ${
+                isActive("footer") ? "active" : ""
+              }`}
             >
               <RollingText text="Contact" />
             </a>

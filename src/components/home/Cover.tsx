@@ -32,7 +32,7 @@ export default function Cover() {
         <div className="container-grid w-full">
           {/* Text occupies columns 6-11 */}
           <div className="col-start-6 col-span-6">
-            <h1 className="text-body text-foreground mb-8" style={{ fontSize: '20px' }}>
+            <h1 className="text-body text-foreground mb-8" style={{ fontSize: '20px', lineHeight: '1.4', fontWeight: '400' }}>
               Daniel is a filmmaker passionate about visual storytelling that moves people. 
               His experience spans commercial work, narrative film, and digital advertising, 
               from editing UGC campaigns to filming award winning documentaries. He brings 

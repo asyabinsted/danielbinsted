@@ -160,14 +160,14 @@ export default function Header() {
               <RollingText text="Contact" />
             </a>
 
-            <a
+            {/* <a
               href="/assets/documents/daniel-binsted-cv.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="nav-link text-supporting text-foreground"
             >
               <RollingText text="CV (pdf↓)" />
-            </a>
+            </a> */}
           </nav>
         </div>
       </header>

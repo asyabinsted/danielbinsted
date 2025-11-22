@@ -1,5 +1,8 @@
+'use client';
+
 import Image from "next/image";
 import Link from "next/link";
+import RollingText from "@/components/RollingText";
 
 export default function About() {
   return (
@@ -58,9 +61,9 @@ export default function About() {
           
           <Link 
             href="/#works" 
-            className="inline-block text-supporting footer-link"
+            className="nav-link text-supporting text-foreground"
           >
-            Selected works →
+            <RollingText text="Selected works →" />
           </Link>
         </div>
 

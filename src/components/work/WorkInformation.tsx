@@ -51,7 +51,7 @@ export default function WorkInformation({
         
         {/* Information Section - full width on mobile, right 4 columns on desktop */}
         <div 
-          className="col-span-12 md:col-span-4 px-5 md:px-0"
+          className="col-span-12 md:col-span-4"
         >
           <div className="space-y-6">
             {/* Title - 100% opacity */}

@@ -42,7 +42,7 @@ export default function Cover() {
             
             <button
               onClick={scrollToWorks}
-              className="inline-block text-supporting footer-link cursor-pointer"
+              className="nav-link text-supporting text-foreground cursor-pointer"
             >
               <RollingText text="↓ Scroll down" />
             </button>

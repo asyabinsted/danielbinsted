@@ -206,7 +206,7 @@ export default function Footer() {
         </p>
         <button
           onClick={scrollToTop}
-          className="text-supporting text-foreground cursor-pointer footer-back-to-top"
+          className="nav-link text-supporting text-foreground cursor-pointer"
         >
           <RollingText text="↑ Back to top" />
         </button>

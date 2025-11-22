@@ -237,30 +237,6 @@ html {
     }
   }
 
-  /* Footer Back to Top Link */
-  .footer-back-to-top {
-    position: relative;
-    display: inline-block;
-    padding-bottom: 1px;
-  }
-
-  .footer-back-to-top::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 0.5px;
-    background-color: currentColor;
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.3s ease;
-  }
-
-  .footer-back-to-top:hover::after {
-    transform: scaleX(1);
-  }
-
   /* Footer Link Hover Animation */
   .footer-link {
     position: relative;

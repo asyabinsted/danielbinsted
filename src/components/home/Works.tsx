@@ -317,7 +317,7 @@ export default function Works() {
       <div className="w-full px-5">
         {/* Removed "Works" title */}
         
-        <div className="space-y-32">
+        <div className="space-y-16">
           {rows.map((row, rowIndex) => (
             <div 
               key={rowIndex} 

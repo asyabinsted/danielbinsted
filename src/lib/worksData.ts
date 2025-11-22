@@ -120,7 +120,7 @@ export const works: Record<string, WorkData> = {
     location: 'Israel · Philippines',
     year: '2019',
     description: 'A story of Noy, a Filipino rock legend who found himself living in the slums of Tel-Aviv, barely scraping by, father to an Israeli daughter who is about to begin her military service. During the late 70\'s, under martial law, Noy founded ASIN, a music band that symbolized liberalism. Now, at the age of 61 and for the first time in many years, he will pick up his old guitar and dare to dream of a new future.',
-    link: 'https://vimeo.com/ondemand/kuyanoy',
+    link: 'https://www.imdb.com/title/tt11571150/?ref_=mv_desc',
     awards: [
       { src: '/assets/works/kuya-noy/awards/kuya-noy-award-01.svg', alt: 'Award 1' },
     ],

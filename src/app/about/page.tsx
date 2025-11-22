@@ -52,7 +52,7 @@ export default function About() {
         <div className="col-span-5">
           <h2 className="text-body uppercase mb-8">BIOGRAPHY</h2>
           <p className="text-body mb-8">
-            I'm a filmmaker passionate about visual storytelling that moves people. 
+            I&apos;m a filmmaker passionate about visual storytelling that moves people. 
             My experience spans commercial work, narrative film, and digital advertising 
             – from editing UGC campaigns to filming award-winning documentaries. I bring 
             a mix of creative intuition, technical expertise, and strategic thinking 

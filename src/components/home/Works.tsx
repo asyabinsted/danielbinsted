@@ -277,7 +277,7 @@ function WorkItem({ work, isHovered, isDimmed, onMouseEnter, onMouseLeave }: Wor
           {isDimmed && (
             <div 
               className="absolute inset-0 bg-background transition-opacity duration-300 z-20"
-              style={{ opacity: 0.8 }}
+              style={{ opacity: 0.9 }}
             />
           )}
         </div>

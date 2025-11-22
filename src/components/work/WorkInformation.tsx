@@ -46,12 +46,12 @@ export default function WorkInformation({
       <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent pointer-events-none" />
       
       <div className="container-grid relative z-10">
-        {/* Empty space - left 8 columns - clickable for video control */}
-        <div className="col-span-8 cursor-pointer" onClick={onBackgroundClick} />
+        {/* Empty space - left 8 columns - clickable for video control - DESKTOP ONLY */}
+        <div className="hidden md:block col-span-8 cursor-pointer" onClick={onBackgroundClick} />
         
-        {/* Information Section - right 4 columns */}
+        {/* Information Section - full width on mobile, right 4 columns on desktop */}
         <div 
-          className="col-span-4"
+          className="col-span-12 md:col-span-4 px-5 md:px-0"
         >
           <div className="space-y-6">
             {/* Title - 100% opacity */}

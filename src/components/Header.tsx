@@ -110,22 +110,23 @@ export default function Header() {
     <>
       <header className="fixed top-0 left-0 right-0 z-50 header-progressive-blur">
         <div className="container-grid h-14 items-center">
-          {/* Logo - Left */}
-          <div className="col-span-3">
+          {/* Logo - Left (bigger on mobile, spans more columns) */}
+          <div className="col-span-9 md:col-span-3 flex items-center px-5 md:px-0">
             <Link href="/" onClick={handleLogoClick} className="inline-block cursor-pointer">
               <Image
                 src="/assets/logos/logo-daniel-binsted.svg"
                 alt="Daniel Binsted"
                 width={95}
                 height={13}
-                style={{ width: '95px', height: 'auto' }}
+                style={{ width: '120px', height: 'auto' }}
+                className="md:!w-[95px]"
                 priority
               />
             </Link>
           </div>
 
-          {/* Logomark - Center */}
-          <div className="col-span-6 flex justify-center">
+          {/* Logomark - Center on desktop, Right corner on mobile */}
+          <div className="col-span-3 md:col-span-6 flex justify-end md:justify-center px-5 md:px-0">
             <Link href="/" onClick={handleLogoClick} className="inline-block cursor-pointer">
               <Image
                 src="/assets/logos/logomark-binsted.svg"
@@ -138,8 +139,8 @@ export default function Header() {
             </Link>
           </div>
 
-          {/* Navigation - Right */}
-          <nav className="col-span-3 flex justify-end gap-8">
+          {/* Navigation - Right (hidden on mobile) */}
+          <nav className="hidden md:flex col-span-3 justify-end gap-8">
             <a
               href="/#works"
               onClick={scrollToWorks}

@@ -107,10 +107,12 @@ export default function Footer() {
   return (
     <footer className="w-full h-screen bg-background text-foreground flex flex-col justify-between">
       {/* Main Footer Content - Centered */}
-      <div className="flex-1 flex items-center justify-center">
+      <div className="flex-1 flex items-center justify-center px-5">
         <div className="container-grid w-full">
+          {/* Mobile: Stack vertically, Desktop: Row layout */}
+          
           {/* Column 1 - CONTACTS */}
-          <div className="col-span-2">
+          <div className="col-span-12 md:col-span-2 mb-8 md:mb-0">
             <h3 className="text-body uppercase mb-4">CONTACTS</h3>
             <div className="space-y-2 flex flex-col items-start">
               <a
@@ -133,7 +135,7 @@ export default function Footer() {
           </div>
 
           {/* Column 2 - LINKS */}
-          <div className="col-span-2">
+          <div className="col-span-12 md:col-span-2 mb-8 md:mb-0">
             <h3 className="text-body uppercase mb-4">LINKS</h3>
             <div className="space-y-2 flex flex-col items-start">
               <a
@@ -156,7 +158,7 @@ export default function Footer() {
           </div>
 
           {/* Column 3 - BASED */}
-          <div className="col-span-2">
+          <div className="col-span-12 md:col-span-2 mb-8 md:mb-0">
             <h3 className="text-body uppercase mb-4">BASED</h3>
             <div className="space-y-2">
               <p className="text-body">Worldwide</p>
@@ -164,11 +166,11 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Column 4 - Empty */}
-          <div className="col-span-2"></div>
+          {/* Column 4 - Empty (desktop only) */}
+          <div className="hidden md:block col-span-2"></div>
 
           {/* Columns 5-6 - DROP ME A MESSAGE */}
-          <div className="col-span-4">
+          <div className="col-span-12 md:col-span-4">
             <h3 className="text-body uppercase mb-4">DROP ME A MESSAGE</h3>
             <p className="text-body mb-4">
               Got an idea, question, or just want to say hi? Type here:

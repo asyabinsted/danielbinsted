@@ -239,13 +239,18 @@ function WorkItem({ work, isHovered, isDimmed, onMouseEnter, onMouseLeave }: Wor
   }, [isHovered, work.videoSrc, work.title]);
 
   return (
-    <div className="col-span-3">
+    <div className="col-span-12 md:col-span-3">
       <Link 
         href={`/work/${work.slug}`}
         onMouseEnter={onMouseEnter}
         onMouseLeave={onMouseLeave}
         className="block"
       >
+        {/* Title above frame - visible on mobile only */}
+        <div className="md:hidden mb-2">
+          <p className="text-body text-foreground">{work.title}</p>
+        </div>
+        
         <div className="relative w-full aspect-[16/9] cursor-pointer overflow-hidden">
           {/* Placeholder Image - always visible as background */}
           <Image
@@ -313,23 +318,23 @@ export default function Works() {
   const hoveredWork = works.find(w => w.id === hoveredWorkId);
 
   return (
-    <section id="works" className="w-full pt-48 pb-24 bg-background">
+    <section id="works" className="w-full pt-48 md:pt-48 pt-24 pb-24 bg-background">
       <div className="w-full px-5">
         {/* Removed "Works" title */}
         
-        <div className="space-y-16">
+        <div className="space-y-8 md:space-y-16">
           {rows.map((row, rowIndex) => (
             <div 
               key={rowIndex} 
               className="relative"
             >
-              {/* Info Line - appears above the hovered row, clickable and hoverable */}
+              {/* Info Line - appears above the hovered row, clickable and hoverable - DESKTOP ONLY */}
               {hoveredRowIndex === rowIndex && hoveredWork && (
                 <Link 
                   href={`/work/${hoveredWork.slug}`}
                   onMouseEnter={() => handleInfoLineEnter(hoveredWork.id, row.findIndex(w => w.id === hoveredWork.id) + rowIndex * 4)}
                   onMouseLeave={handleMouseLeave}
-                  className="absolute -top-[29px] left-0 right-0 z-10 cursor-pointer pb-[21px]"
+                  className="hidden md:block absolute -top-[29px] left-0 right-0 z-10 cursor-pointer pb-[21px]"
                 >
                   <div className="grid grid-cols-12 gap-5">
                     <div className="col-span-3 overflow-visible">
@@ -348,8 +353,8 @@ export default function Works() {
                 </Link>
               )}
 
-              {/* Works Grid Row */}
-              <div className="grid grid-cols-12 gap-5">
+              {/* Works Grid Row - 1 column on mobile, 4 columns on desktop */}
+              <div className="grid grid-cols-12 gap-5 md:gap-5 gap-y-8">
                 {row.map((work, indexInRow) => {
                   const globalIndex = rowIndex * 4 + indexInRow;
                   const isHovered = work.id === hoveredWorkId;

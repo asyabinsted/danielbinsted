@@ -311,7 +311,7 @@ export default function Works() {
               href={`/work/${hoveredWork.slug}`}
               onMouseEnter={() => handleMouseEnter(hoveredWork.id)}
               onMouseLeave={handleMouseLeave}
-              className="hidden xl:block fixed top-[100px] left-0 right-0 z-10 cursor-pointer pointer-events-auto px-5"
+              className="hidden xl:block fixed top-[168px] left-0 right-0 z-10 cursor-pointer pointer-events-auto px-5"
             >
               <div className="grid grid-cols-12 gap-5">
                 <div className="col-span-3 overflow-visible">

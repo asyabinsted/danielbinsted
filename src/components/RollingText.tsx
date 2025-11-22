@@ -18,8 +18,8 @@ export default function RollingText({ text }: RollingTextProps) {
           }}
         >
           <span className="letter-wrapper">
-            <span className="letter-original">{letter}</span>
-            <span className="letter-duplicate">{letter}</span>
+            <span className="letter-original">{letter === ' ' ? '\u00A0' : letter}</span>
+            <span className="letter-duplicate">{letter === ' ' ? '\u00A0' : letter}</span>
           </span>
         </span>
       ))}

@@ -97,13 +97,13 @@ export default function WorkInformation({
             
             {/* Links - 100% opacity */}
             {(link || trailer) && (
-              <div className="flex flex-col gap-2">
+              <div className="flex flex-col gap-2 items-start">
                 {link && (
                   <a
                     href={link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-body footer-link inline-block"
+                    className="text-body footer-link"
                   >
                     Link
                   </a>
@@ -113,7 +113,7 @@ export default function WorkInformation({
                     href={trailer}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-body text-foreground underline hover:text-foreground/80 transition-colors inline-block"
+                    className="text-body text-foreground underline hover:text-foreground/80 transition-colors"
                   >
                     Trailer
                   </a>

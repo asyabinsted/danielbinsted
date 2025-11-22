@@ -239,7 +239,7 @@ function WorkItem({ work, isHovered, isDimmed, onMouseEnter, onMouseLeave }: Wor
   }, [isHovered, work.videoSrc, work.title]);
 
   return (
-    <div className="col-span-12 sm:col-span-6 lg:col-span-4 xl:col-span-3">
+    <div className="col-span-12 md:col-span-3">
       <Link 
         href={`/work/${work.slug}`}
         onMouseEnter={onMouseEnter}
@@ -247,7 +247,7 @@ function WorkItem({ work, isHovered, isDimmed, onMouseEnter, onMouseLeave }: Wor
         className="block"
       >
         {/* Title above frame - visible on mobile only */}
-        <div className="sm:hidden mb-2">
+        <div className="md:hidden mb-2">
           <p className="text-body text-foreground">{work.title}</p>
         </div>
         
@@ -288,14 +288,32 @@ function WorkItem({ work, isHovered, isDimmed, onMouseEnter, onMouseLeave }: Wor
 
 export default function Works() {
   const [hoveredWorkId, setHoveredWorkId] = useState<number | null>(null);
+  const [hoveredRowIndex, setHoveredRowIndex] = useState<number | null>(null);
 
-  const handleMouseEnter = (workId: number) => {
+  const handleMouseEnter = (workId: number, index: number) => {
     setHoveredWorkId(workId);
+    // Calculate which row this work is in (4 works per row)
+    const rowIndex = Math.floor(index / 4);
+    setHoveredRowIndex(rowIndex);
   };
 
   const handleMouseLeave = () => {
     setHoveredWorkId(null);
+    setHoveredRowIndex(null);
   };
+
+  const handleInfoLineEnter = (workId: number, index: number) => {
+    // Keep the info line visible when hovering over it
+    setHoveredWorkId(workId);
+    const rowIndex = Math.floor(index / 4);
+    setHoveredRowIndex(rowIndex);
+  };
+
+  // Group works by row (4 per row)
+  const rows: typeof works[][] = [];
+  for (let i = 0; i < works.length; i += 4) {
+    rows.push(works.slice(i, i + 4));
+  }
 
   const hoveredWork = works.find(w => w.id === hoveredWorkId);
 
@@ -304,50 +322,69 @@ export default function Works() {
       <div className="w-full px-5">
         {/* Removed "Works" title */}
         
-        <div className="relative">
-          {/* Info Line - appears above the hovered work - LARGE DESKTOP ONLY (4 per row) */}
-          {hoveredWork && (
-            <Link 
-              href={`/work/${hoveredWork.slug}`}
-              onMouseEnter={() => handleMouseEnter(hoveredWork.id)}
-              onMouseLeave={handleMouseLeave}
-              className="hidden xl:block fixed top-[168px] left-0 right-0 z-10 cursor-pointer pointer-events-auto px-5"
+        <div className="space-y-8 md:space-y-16">
+          {rows.map((row, rowIndex) => (
+            <div 
+              key={rowIndex} 
+              className="relative"
             >
-              <div className="grid grid-cols-12 gap-5">
-                <div className="col-span-3 overflow-visible">
-                  <p className="text-body text-foreground whitespace-nowrap overflow-visible">{hoveredWork.genre}</p>
-                </div>
-                <div className="col-span-3 overflow-visible">
-                  <p className="text-body text-foreground whitespace-nowrap overflow-visible">{hoveredWork.title}</p>
-                </div>
-                <div className="col-span-3 overflow-visible">
-                  <p className="text-body text-foreground whitespace-nowrap overflow-visible">{hoveredWork.role}</p>
-                </div>
-                <div className="col-span-3 text-right overflow-visible">
-                  <p className="text-body text-foreground whitespace-nowrap overflow-visible">View</p>
-                </div>
-              </div>
-            </Link>
-          )}
-
-          {/* Works Grid - wraps naturally based on screen size */}
-          <div className="grid grid-cols-12 gap-5 gap-y-8 xl:gap-y-16">
-            {works.map((work) => {
-              const isHovered = work.id === hoveredWorkId;
-              const isDimmed = hoveredWorkId !== null && !isHovered;
-
-              return (
-                <WorkItem
-                  key={work.id}
-                  work={work}
-                  isHovered={isHovered}
-                  isDimmed={isDimmed}
-                  onMouseEnter={() => handleMouseEnter(work.id)}
+              {/* Info Line - appears above the hovered row, clickable and hoverable - DESKTOP ONLY */}
+              {hoveredRowIndex === rowIndex && hoveredWork && (
+                <Link 
+                  href={`/work/${hoveredWork.slug}`}
+                  onMouseEnter={() => handleInfoLineEnter(hoveredWork.id, row.findIndex(w => w.id === hoveredWork.id) + rowIndex * 4)}
                   onMouseLeave={handleMouseLeave}
-                />
-              );
-            })}
-          </div>
+                  className="hidden md:block absolute -top-[29px] left-0 right-0 z-10 cursor-pointer pb-[21px]"
+                >
+                  <div className="grid grid-cols-12 gap-5">
+                    <div className="col-span-3 overflow-visible">
+                      <p className="text-body text-foreground whitespace-nowrap overflow-visible">{hoveredWork.genre}</p>
+                    </div>
+                    <div className="col-span-3 overflow-visible">
+                      <p className="text-body text-foreground whitespace-nowrap overflow-visible">{hoveredWork.title}</p>
+                    </div>
+                    <div className="col-span-3 overflow-visible">
+                      <p className="text-body text-foreground whitespace-nowrap overflow-visible">{hoveredWork.role}</p>
+                    </div>
+                    <div className="col-span-3 text-right overflow-visible">
+                      <p className="text-body text-foreground whitespace-nowrap overflow-visible">View</p>
+                    </div>
+                  </div>
+                </Link>
+              )}
+
+              {/* Works Grid Row - 1 column on mobile, 4 columns on desktop */}
+              <div className="grid grid-cols-12 gap-5 md:gap-5 gap-y-8">
+                {row.map((work, indexInRow) => {
+                  const globalIndex = rowIndex * 4 + indexInRow;
+                  const isHovered = work.id === hoveredWorkId;
+                  const isDimmed = hoveredWorkId !== null && !isHovered;
+
+                  return (
+                    <WorkItem
+                      key={work.id}
+                      work={work}
+                      isHovered={isHovered}
+                      isDimmed={isDimmed}
+                      onMouseEnter={() => handleMouseEnter(work.id, globalIndex)}
+                      onMouseLeave={handleMouseLeave}
+                    />
+                  );
+                })}
+                
+                {/* Add "Your project could be here" frame to the last row - COMMENTED OUT FOR NOW */}
+                {/* {rowIndex === rows.length - 1 && row.length < 4 && (
+                  <div className="col-span-3">
+                    <div className="relative w-full aspect-[16/9] border border-foreground/20 bg-background flex items-center justify-center">
+                      <p className="text-body text-foreground text-center px-4">
+                        Your project could be here
+                      </p>
+                    </div>
+                  </div>
+                )} */}
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

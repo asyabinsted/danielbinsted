@@ -138,6 +138,7 @@ const works: Work[] = [
     genre: "Live music video",
     role: "Cinematographer",
     thumbnail: "/images/works/succulent-sessions/succulent-sessions-placeholder.jpg",
+    videoSrc: "/videos/works/succulent-sessions/succulent-sessions.mp4",
   },
   {
     id: 15,

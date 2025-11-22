@@ -366,8 +366,8 @@ export default function Works() {
                   );
                 })}
                 
-                {/* Add "Your project could be here" frame to the last row */}
-                {rowIndex === rows.length - 1 && row.length < 4 && (
+                {/* Add "Your project could be here" frame to the last row - COMMENTED OUT FOR NOW */}
+                {/* {rowIndex === rows.length - 1 && row.length < 4 && (
                   <div className="col-span-3">
                     <div className="relative w-full aspect-[16/9] border border-foreground/20 bg-background flex items-center justify-center">
                       <p className="text-body text-foreground text-center px-4">
@@ -375,7 +375,7 @@ export default function Works() {
                       </p>
                     </div>
                   </div>
-                )}
+                )} */}
               </div>
             </div>
           ))}

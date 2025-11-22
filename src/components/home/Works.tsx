@@ -239,7 +239,7 @@ function WorkItem({ work, isHovered, isDimmed, onMouseEnter, onMouseLeave }: Wor
   }, [isHovered, work.videoSrc, work.title]);
 
   return (
-    <div className="col-span-12 md:col-span-3">
+    <div className="col-span-12 sm:col-span-6 lg:col-span-4 xl:col-span-3">
       <Link 
         href={`/work/${work.slug}`}
         onMouseEnter={onMouseEnter}
@@ -247,7 +247,7 @@ function WorkItem({ work, isHovered, isDimmed, onMouseEnter, onMouseLeave }: Wor
         className="block"
       >
         {/* Title above frame - visible on mobile only */}
-        <div className="md:hidden mb-2">
+        <div className="sm:hidden mb-2">
           <p className="text-body text-foreground">{work.title}</p>
         </div>
         

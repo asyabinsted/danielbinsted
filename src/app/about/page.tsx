@@ -111,14 +111,6 @@ export default function About() {
             >
               Succulent Sessions
             </a>
-            <a
-              href="https://www.echelonn.io/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-body footer-link"
-            >
-              Echelonn
-            </a>
           </div>
         </div>
       </div>

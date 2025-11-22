@@ -29,6 +29,7 @@ export default function WorkVideoPlayer({
   const [isMuted, setIsMuted] = useState(true);
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
+  const [showPoster, setShowPoster] = useState(true);
 
   useEffect(() => {
     const video = videoRef.current;
@@ -45,6 +46,10 @@ export default function WorkVideoPlayer({
       // Autoplay once video can play (muted by default)
       video.play().then(() => {
         setIsPlaying(true);
+        // Hide poster once video starts playing (only for vertical videos)
+        if (isVertical) {
+          setShowPoster(false);
+        }
       }).catch((error) => {
         console.log('Autoplay failed:', error);
       });
@@ -124,16 +129,18 @@ export default function WorkVideoPlayer({
         onClick={togglePlayPause}
         style={{ backgroundColor: isVertical ? '#000000' : 'transparent' }}
       >
-        {/* Poster Image - shows while video loads */}
-        <div className="absolute inset-0 w-full h-full">
-          <Image
-            src={posterSrc}
-            alt={title}
-            fill
-            className={isVertical ? "object-contain" : "object-cover"}
-            priority
-          />
-        </div>
+        {/* Poster Image - shows while video loads, hidden once video plays for vertical videos */}
+        {showPoster && (
+          <div className="absolute inset-0 w-full h-full">
+            <Image
+              src={posterSrc}
+              alt={title}
+              fill
+              className={isVertical ? "object-contain" : "object-cover"}
+              priority
+            />
+          </div>
+        )}
 
         {/* Video - overlays poster once loaded */}
         <video

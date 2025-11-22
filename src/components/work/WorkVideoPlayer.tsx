@@ -47,8 +47,8 @@ export default function WorkVideoPlayer({
       // Autoplay once video can play (muted by default)
       video.play().then(() => {
         setIsPlaying(true);
-        // Hide poster once video starts playing (only for vertical videos)
-        if (isVertical) {
+        // Hide poster once video starts playing (for vertical videos or on mobile)
+        if (isVertical || window.innerWidth < 768) {
           setShowPoster(false);
         }
       }).catch((error) => {
@@ -130,14 +130,14 @@ export default function WorkVideoPlayer({
         onClick={togglePlayPause}
         style={{ backgroundColor: isVertical ? '#000000' : 'transparent' }}
       >
-        {/* Poster Image - shows while video loads, hidden once video plays for vertical videos */}
+        {/* Poster Image - shows while video loads, hidden once video plays on mobile or for vertical videos */}
         {showPoster && (
           <div className="absolute inset-0 w-full h-full">
             <Image
               src={posterSrc}
               alt={title}
               fill
-              className={isVertical ? "object-contain" : "object-contain md:object-cover"}
+              className={isVertical ? "object-contain" : "object-cover md:object-cover"}
               priority
             />
           </div>

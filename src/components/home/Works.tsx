@@ -368,6 +368,17 @@ export default function Works() {
               </div>
             </div>
           ))}
+
+          {/* Final Frame - "Your project could be here" */}
+          <div className="grid grid-cols-12 gap-5">
+            <div className="col-span-3">
+              <div className="relative w-full aspect-[16/9] border border-foreground/20 bg-background flex items-center justify-center">
+                <p className="text-body text-foreground text-center px-4">
+                  Your project could be here
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

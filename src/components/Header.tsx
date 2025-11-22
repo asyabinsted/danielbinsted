@@ -122,15 +122,6 @@ export default function Header() {
               <RollingText text="Work" />
             </a>
 
-            <Link
-              href="/about"
-              className={`nav-link text-supporting text-foreground ${
-                isActive("/about") ? "active" : ""
-              }`}
-            >
-              <RollingText text="About" />
-            </Link>
-
             <a
               href="/assets/documents/daniel-binsted-cv.pdf"
               target="_blank"

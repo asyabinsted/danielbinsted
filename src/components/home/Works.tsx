@@ -21,8 +21,8 @@ const works: Work[] = [
     title: "The First Lady",
     genre: "Documentary",
     role: "Cinematographer",
-    thumbnail: "/images/works/the-first-lady/first-lady-placeholder.jpg",
-    videoSrc: "/videos/works/the-first-lady/first-lady.mp4",
+    thumbnail: "/images/works/the-first-lady/the-first-lady-placeholder.jpg",
+    videoSrc: "/videos/works/the-first-lady/the-first-lady.mp4",
   },
   {
     id: 2,
@@ -30,8 +30,8 @@ const works: Work[] = [
     title: "The War of Raya Sinitsina",
     genre: "Documentary",
     role: "Cinematographer",
-    thumbnail: "/images/works/the-war-of-raya-sinitsina/war-of-raya-cover.jpg",
-    videoSrc: "/videos/works/the-war-of-raya-sinitsina/war-of-raya.mp4",
+    thumbnail: "/images/works/the-war-of-raya-sinitsina/the-war-of-raya-sinitsina-cover.jpg",
+    videoSrc: "/videos/works/the-war-of-raya-sinitsina/the-war-of-raya-sinitsina.mp4",
   },
   {
     id: 3,
@@ -40,7 +40,6 @@ const works: Work[] = [
     genre: "Documentary",
     role: "Cinematographer",
     thumbnail: "/images/works/mini-dv/mini-dv-placeholder.jpg",
-    videoSrc: "/videos/works/mini-dv/mini-dv.mp4",
   },
   {
     id: 4,
@@ -57,7 +56,6 @@ const works: Work[] = [
     genre: "Drama",
     role: "Writer, co-creator",
     thumbnail: "/images/works/empty-spaces/empty-spaces-placeholder.jpg",
-    videoSrc: "/videos/works/empty-spaces/empty-spaces.mp4",
   },
   {
     id: 6,
@@ -66,6 +64,7 @@ const works: Work[] = [
     genre: "Documentary",
     role: "Director",
     thumbnail: "/images/works/kuya-noy/kuya-noy-placeholder.jpg",
+    videoSrc: "/videos/works/kuya-noy/kuya-noy.mp4",
   },
   {
     id: 7,
@@ -73,8 +72,8 @@ const works: Work[] = [
     title: "The Unknown Soldier",
     genre: "Documentary",
     role: "Cinematographer",
-    thumbnail: "/images/works/the-unknown-soldier/unknown-soldier-placeholder.jpg",
-    videoSrc: "/videos/works/the-unknown-soldier/unknown-soldier-video.mp4",
+    thumbnail: "/images/works/the-unknown-soldier/the-unknown-soldier-placeholder.jpg",
+    videoSrc: "/videos/works/the-unknown-soldier/the-unknown-soldier.mp4",
   },
   {
     id: 8,
@@ -82,8 +81,8 @@ const works: Work[] = [
     title: "The Postman in Underwear",
     genre: "Comedy",
     role: "Director, writer",
-    thumbnail: "/images/works/the-postman-in-underwear/postman-placeholder.jpg",
-    videoSrc: "/videos/works/the-postman-in-underwear/postman.mp4",
+    thumbnail: "/images/works/the-postman-in-underwear/the-postman-in-underwear-placeholder.jpg",
+    videoSrc: "/videos/works/the-postman-in-underwear/the-postman-in-underwear.mp4",
   },
   {
     id: 9,
@@ -91,7 +90,8 @@ const works: Work[] = [
     title: "Riverside.fm",
     genre: "Branded campaign",
     role: "Director, Producer & Video Editor",
-    thumbnail: "/images/works/riverside-magic-clips/magic-clips-placeholder.jpg",
+    thumbnail: "/images/works/riverside-magic-clips/riverside-magic-clips-placeholder.jpg",
+    videoSrc: "/videos/works/riverside-magic-clips/riverside-magic-clips.mp4",
   },
   {
     id: 10,
@@ -99,7 +99,8 @@ const works: Work[] = [
     title: "Riverside.fm",
     genre: "Promotional video",
     role: "Writer, Producer, Director & Video Editor",
-    thumbnail: "/images/works/riverside-ai-transcriptions/ai-transcriptions-placeholder.jpg",
+    thumbnail: "/images/works/riverside-ai-transcriptions/riverside-ai-transcriptions-placeholder.jpg",
+    videoSrc: "/videos/works/riverside-ai-transcriptions/riverside-ai-transcriptions.mp4",
   },
   {
     id: 11,
@@ -108,6 +109,7 @@ const works: Work[] = [
     genre: "Branded content",
     role: "Director, Producer, Writer, Editor & Cinematographer",
     thumbnail: "/images/works/fiverr/fiverr-placeholder.jpg",
+    videoSrc: "/videos/works/fiverr/fiverr.mp4",
   },
   {
     id: 12,
@@ -116,6 +118,7 @@ const works: Work[] = [
     genre: "Educational series",
     role: "Producer & Video Editor",
     thumbnail: "/images/works/riverside-masterclass/riverside-masterclass-placeholder.jpg",
+    videoSrc: "/videos/works/riverside-masterclass/riverside-masterclass.mp4",
   },
   {
     id: 13,
@@ -139,7 +142,8 @@ const works: Work[] = [
     title: "Riverside.fm",
     genre: "Paid Social Campaign",
     role: "Director & Editor",
-    thumbnail: "/images/works/riverside-paid-social-01/riverside-01-placeholder.jpg",
+    thumbnail: "/images/works/riverside-paid-social-01/riverside-paid-social-01-placeholder.jpg",
+    videoSrc: "/videos/works/riverside-paid-social-01/riverside-paid-social-01.mp4",
   },
   {
     id: 16,
@@ -147,7 +151,8 @@ const works: Work[] = [
     title: "Riverside.fm",
     genre: "Paid Social Campaign",
     role: "Director & Editor",
-    thumbnail: "/images/works/riverside-paid-social-02/riverside-02-placeholder.jpg",
+    thumbnail: "/images/works/riverside-paid-social-02/riverside-paid-social-02-placeholder.jpg",
+    videoSrc: "/videos/works/riverside-paid-social-02/riverside-paid-social-02.mp4",
   },
   {
     id: 17,
@@ -156,6 +161,7 @@ const works: Work[] = [
     genre: "Performance Marketing Campaign",
     role: "Editor",
     thumbnail: "/images/works/mixtiles-01/mixtiles-01-placeholder.jpg",
+    videoSrc: "/videos/works/mixtiles-01/mixtiles-01.mp4",
   },
   {
     id: 18,
@@ -171,7 +177,8 @@ const works: Work[] = [
     title: "Echelonn AI",
     genre: "Brand Awareness Video",
     role: "Director & Editor",
-    thumbnail: "/images/works/echelonn-ai/echelon-ai-placeholder.jpg",
+    thumbnail: "/images/works/echelonn-ai/echelonn-ai-placeholder.jpg",
+    videoSrc: "/videos/works/echelonn-ai/echelonn-ai.mp4",
   },
 ];
 

@@ -47,10 +47,8 @@ export default function WorkVideoPlayer({
       // Autoplay once video can play (muted by default)
       video.play().then(() => {
         setIsPlaying(true);
-        // Hide poster once video starts playing (for vertical videos or on mobile)
-        if (isVertical || window.innerWidth < 768) {
-          setShowPoster(false);
-        }
+        // Hide poster once video starts playing
+        setShowPoster(false);
       }).catch((error) => {
         console.log('Autoplay failed:', error);
       });

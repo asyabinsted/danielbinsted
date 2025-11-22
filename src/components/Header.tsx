@@ -68,6 +68,18 @@ export default function Header() {
     }
   };
 
+  const scrollToFooter = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    if (pathname !== "/") {
+      router.push("/#footer");
+    } else {
+      const footerSection = document.querySelector("footer");
+      if (footerSection) {
+        footerSection.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  };
+
   const isActive = (path: string) => {
     if (path === "works") {
       return pathname === "/" && activeSection === "works";
@@ -120,6 +132,14 @@ export default function Header() {
               }`}
             >
               <RollingText text="Work" />
+            </a>
+
+            <a
+              href="/#footer"
+              onClick={scrollToFooter}
+              className="nav-link text-supporting text-foreground"
+            >
+              <RollingText text="Contact" />
             </a>
 
             <a

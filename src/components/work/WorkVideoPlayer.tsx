@@ -137,7 +137,7 @@ export default function WorkVideoPlayer({
               src={posterSrc}
               alt={title}
               fill
-              className={isVertical ? "object-contain" : "object-cover"}
+              className={isVertical ? "object-contain" : "object-contain md:object-cover"}
               priority
             />
           </div>
@@ -147,7 +147,7 @@ export default function WorkVideoPlayer({
         <video
           ref={videoRef}
           src={videoSrc}
-          className={`absolute inset-0 w-full h-full ${isVertical ? "object-contain" : "object-cover"}`}
+          className={`absolute inset-0 w-full h-full ${isVertical ? "object-contain" : "object-contain md:object-cover"}`}
           playsInline
           loop
           preload="auto"

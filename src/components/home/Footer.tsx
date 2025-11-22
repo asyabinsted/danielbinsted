@@ -107,7 +107,7 @@ export default function Footer() {
   return (
     <footer className="w-full h-screen bg-background text-foreground flex flex-col justify-between">
       {/* Main Footer Content - Centered */}
-      <div className="flex-1 flex items-center justify-center px-5">
+      <div className="flex-1 flex items-center justify-center">
         <div className="container-grid w-full">
           {/* Mobile: Stack vertically, Desktop: Row layout */}
           

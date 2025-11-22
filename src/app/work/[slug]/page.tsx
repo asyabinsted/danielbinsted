@@ -56,6 +56,11 @@ export default function WorkDetail({ params }: { params: { slug: string } }) {
     return 160; // Default width
   };
 
+  // Determine if video should be displayed vertically
+  const isVerticalVideo = () => {
+    return params.slug === 'echelonn-ai' || params.slug === 'mixtiles-01';
+  };
+
   return (
     <main className="w-full min-h-screen relative overflow-x-hidden">
       <BackButton />
@@ -68,6 +73,7 @@ export default function WorkDetail({ params }: { params: { slug: string } }) {
         role={work.role}
         onInformationClick={handleInformationClick}
         onVideoToggle={handleVideoToggle}
+        isVertical={isVerticalVideo()}
       />
 
       <div ref={informationRef}>

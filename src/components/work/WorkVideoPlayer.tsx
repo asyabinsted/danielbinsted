@@ -11,6 +11,7 @@ interface WorkVideoPlayerProps {
   role: string;
   onInformationClick: () => void;
   onVideoToggle: () => void;
+  isVertical?: boolean;
 }
 
 export default function WorkVideoPlayer({
@@ -21,6 +22,7 @@ export default function WorkVideoPlayer({
   role,
   onInformationClick,
   onVideoToggle,
+  isVertical = false,
 }: WorkVideoPlayerProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);
@@ -120,6 +122,7 @@ export default function WorkVideoPlayer({
       <div 
         className="fixed inset-0 w-full h-full z-0 cursor-pointer"
         onClick={togglePlayPause}
+        style={{ backgroundColor: isVertical ? '#000000' : 'transparent' }}
       >
         {/* Poster Image - shows while video loads */}
         <div className="absolute inset-0 w-full h-full">
@@ -127,7 +130,7 @@ export default function WorkVideoPlayer({
             src={posterSrc}
             alt={title}
             fill
-            className="object-cover"
+            className={isVertical ? "object-contain" : "object-cover"}
             priority
           />
         </div>
@@ -136,7 +139,7 @@ export default function WorkVideoPlayer({
         <video
           ref={videoRef}
           src={videoSrc}
-          className="absolute inset-0 w-full h-full object-cover"
+          className={`absolute inset-0 w-full h-full ${isVertical ? "object-contain" : "object-cover"}`}
           playsInline
           loop
           preload="auto"

@@ -111,7 +111,7 @@ export default function Header() {
       <header className="fixed top-0 left-0 right-0 z-50 header-progressive-blur">
         <div className="container-grid h-14 items-center">
           {/* Logo - Left (bigger on mobile, spans more columns) */}
-          <div className="col-span-9 md:col-span-3 flex items-center pl-1 md:px-0">
+          <div className="col-span-9 md:col-span-3 flex items-center pl-5 md:px-0">
             <Link href="/" onClick={handleLogoClick} className="inline-block cursor-pointer">
               <Image
                 src="/assets/logos/logo-daniel-binsted.svg"
@@ -126,7 +126,7 @@ export default function Header() {
           </div>
 
           {/* Logomark - Center on desktop, Right corner on mobile */}
-          <div className="col-span-3 md:col-span-6 flex justify-end md:justify-center pr-1 md:px-0">
+          <div className="col-span-3 md:col-span-6 flex justify-end md:justify-center pr-5 md:px-0">
             <Link href="/" onClick={handleLogoClick} className="inline-block cursor-pointer">
               <Image
                 src="/assets/logos/logomark-binsted.svg"

@@ -44,6 +44,11 @@ export default function WorkVideoPlayer({
     };
 
     const handleCanPlay = () => {
+      // Ensure video is muted for autoplay on iOS
+      video.muted = true;
+      video.setAttribute('playsinline', 'true');
+      video.setAttribute('webkit-playsinline', 'true');
+      
       // Autoplay once video can play (muted by default)
       video.play().then(() => {
         setIsPlaying(true);
@@ -149,6 +154,9 @@ export default function WorkVideoPlayer({
           src={videoSrc}
           className={`absolute inset-0 w-full h-full ${isVertical ? "object-contain" : "object-contain md:object-cover"}`}
           playsInline
+          webkit-playsinline="true"
+          autoPlay
+          muted
           loop
           preload="auto"
         />

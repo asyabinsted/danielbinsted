@@ -190,10 +190,17 @@ function WorkItem({ work, isHovered, isDimmed, onMouseEnter, onMouseLeave }: Wor
   const videoRef = useRef<HTMLVideoElement>(null);
   const [videoOpacity, setVideoOpacity] = useState(0);
   const hoverTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const [isTouchDevice, setIsTouchDevice] = useState(false);
+
+  // Detect if device supports touch
+  useEffect(() => {
+    setIsTouchDevice('ontouchstart' in window || navigator.maxTouchPoints > 0);
+  }, []);
 
   useEffect(() => {
     const video = videoRef.current;
-    if (!video || !work.videoSrc) return;
+    // Skip video hover effect on touch devices
+    if (!video || !work.videoSrc || isTouchDevice) return;
 
     if (isHovered) {
       // Add delay before showing video (prevents accidental triggers on quick movements)
@@ -236,14 +243,14 @@ function WorkItem({ work, isHovered, isDimmed, onMouseEnter, onMouseLeave }: Wor
         clearTimeout(hoverTimeoutRef.current);
       }
     };
-  }, [isHovered, work.videoSrc, work.title]);
+  }, [isHovered, work.videoSrc, work.title, isTouchDevice]);
 
   return (
     <div className="col-span-12 md:col-span-3">
       <Link 
         href={`/work/${work.slug}`}
-        onMouseEnter={onMouseEnter}
-        onMouseLeave={onMouseLeave}
+        onMouseEnter={isTouchDevice ? undefined : onMouseEnter}
+        onMouseLeave={isTouchDevice ? undefined : onMouseLeave}
         className="block"
       >
         {/* Title above frame - visible on mobile only */}

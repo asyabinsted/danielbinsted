@@ -53,14 +53,6 @@ const works: Work[] = [
   },
   {
     id: 5,
-    slug: "empty-spaces",
-    title: "Empty Spaces",
-    genre: "Drama",
-    role: "Writer, co-creator",
-    thumbnail: "/images/works/empty-spaces/empty-spaces-placeholder.jpg",
-  },
-  {
-    id: 6,
     slug: "kuya-noy",
     title: "Kuya Noy",
     genre: "Documentary",
@@ -69,7 +61,7 @@ const works: Work[] = [
     videoSrc: "/videos/works/kuya-noy/kuya-noy.mp4",
   },
   {
-    id: 7,
+    id: 6,
     slug: "the-unknown-soldier",
     title: "The Unknown Soldier",
     genre: "Documentary",
@@ -78,13 +70,21 @@ const works: Work[] = [
     videoSrc: "/videos/works/the-unknown-soldier/the-unknown-soldier.mp4",
   },
   {
-    id: 8,
+    id: 7,
     slug: "the-postman-in-underwear",
     title: "The Postman in Underwear",
     genre: "Comedy",
     role: "Director, writer",
     thumbnail: "/images/works/the-postman-in-underwear/the-postman-in-underwear-placeholder.jpg",
     videoSrc: "/videos/works/the-postman-in-underwear/the-postman-in-underwear.mp4",
+  },
+  {
+    id: 8,
+    slug: "empty-spaces",
+    title: "Empty Spaces",
+    genre: "Drama",
+    role: "Writer, co-creator",
+    thumbnail: "/images/works/empty-spaces/empty-spaces-placeholder.jpg",
   },
   {
     id: 9,

@@ -296,103 +296,133 @@ function WorkItem({ work, isHovered, isDimmed, onMouseEnter, onMouseLeave }: Wor
 export default function Works() {
   const [hoveredWorkId, setHoveredWorkId] = useState<number | null>(null);
   const [hoveredRowIndex, setHoveredRowIndex] = useState<number | null>(null);
+  const [hoveredGroupId, setHoveredGroupId] = useState<string | null>(null);
 
-  const handleMouseEnter = (workId: number, index: number) => {
+  const handleMouseEnter = (workId: number, localIndex: number, groupId: string) => {
     setHoveredWorkId(workId);
-    // Calculate which row this work is in (4 works per row)
-    const rowIndex = Math.floor(index / 4);
+    // Calculate which row this work is in within its group (4 works per row)
+    const rowIndex = Math.floor(localIndex / 4);
     setHoveredRowIndex(rowIndex);
+    setHoveredGroupId(groupId);
   };
 
   const handleMouseLeave = () => {
     setHoveredWorkId(null);
     setHoveredRowIndex(null);
+    setHoveredGroupId(null);
   };
 
-  const handleInfoLineEnter = (workId: number, index: number) => {
+  const handleInfoLineEnter = (workId: number, localIndex: number, groupId: string) => {
     // Keep the info line visible when hovering over it
     setHoveredWorkId(workId);
-    const rowIndex = Math.floor(index / 4);
+    const rowIndex = Math.floor(localIndex / 4);
     setHoveredRowIndex(rowIndex);
+    setHoveredGroupId(groupId);
   };
 
-  // Group works by row (4 per row)
-  const rows: Work[][] = [];
-  for (let i = 0; i < works.length; i += 4) {
-    rows.push(works.slice(i, i + 4));
-  }
+  // Split works into two groups
+  // Group 1: Film & Awarded Works (IDs 1-8: first 8 works)
+  const filmWorks = works.slice(0, 8);
+  // Group 2: Brand & Performance Campaigns (IDs 9-18: remaining works)
+  const brandWorks = works.slice(8);
+
+  // Group works by row (4 per row) for each group
+  const groupWorksIntoRows = (worksList: Work[]): Work[][] => {
+    const rows: Work[][] = [];
+    for (let i = 0; i < worksList.length; i += 4) {
+      rows.push(worksList.slice(i, i + 4));
+    }
+    return rows;
+  };
+
+  const filmRows = groupWorksIntoRows(filmWorks);
+  const brandRows = groupWorksIntoRows(brandWorks);
 
   const hoveredWork = works.find(w => w.id === hoveredWorkId);
+
+  // Helper component for group title with line
+  const GroupTitle = ({ title }: { title: string }) => (
+    <div className="mb-8 md:mb-16">
+      <h2 className="text-body uppercase text-foreground mb-4">
+        {title}
+      </h2>
+      <div className="w-full h-[0.5px] bg-foreground/20" />
+    </div>
+  );
+
+  // Helper to render a group of rows
+  const renderWorkGroup = (rows: Work[][], worksList: Work[], groupId: string) => (
+    <div className="space-y-8 md:space-y-16">
+      {rows.map((row, rowIndex) => (
+        <div 
+          key={rowIndex} 
+          className="relative"
+        >
+          {/* Info Line - appears above the hovered row, clickable and hoverable - DESKTOP ONLY */}
+          {hoveredRowIndex === rowIndex && hoveredWork && hoveredGroupId === groupId && (
+            <Link 
+              href={`/work/${hoveredWork.slug}`}
+              onMouseEnter={() => {
+                const localIndex = worksList.findIndex(w => w.id === hoveredWork.id);
+                handleInfoLineEnter(hoveredWork.id, localIndex, groupId);
+              }}
+              onMouseLeave={handleMouseLeave}
+              className="hidden md:block absolute -top-[29px] left-0 right-0 z-10 cursor-pointer pb-[21px]"
+            >
+              <div className="grid grid-cols-12 gap-5">
+                <div className="col-span-3 overflow-visible">
+                  <p className="text-body text-foreground whitespace-nowrap overflow-visible">{hoveredWork.genre}</p>
+                </div>
+                <div className="col-span-3 overflow-visible">
+                  <p className="text-body text-foreground whitespace-nowrap overflow-visible">{hoveredWork.title}</p>
+                </div>
+                <div className="col-span-3 overflow-visible">
+                  <p className="text-body text-foreground whitespace-nowrap overflow-visible">{hoveredWork.role}</p>
+                </div>
+                <div className="col-span-3 text-right overflow-visible">
+                  <p className="text-body text-foreground whitespace-nowrap overflow-visible">View</p>
+                </div>
+              </div>
+            </Link>
+          )}
+
+          {/* Works Grid Row - 1 column on mobile, 4 columns on desktop */}
+          <div className="grid grid-cols-12 gap-5 md:gap-5 gap-y-8">
+            {row.map((work, indexInRow) => {
+              const localIndex = worksList.findIndex(w => w.id === work.id);
+              const isHovered = work.id === hoveredWorkId;
+              const isDimmed = hoveredWorkId !== null && !isHovered;
+
+              return (
+                <WorkItem
+                  key={work.id}
+                  work={work}
+                  isHovered={isHovered}
+                  isDimmed={isDimmed}
+                  onMouseEnter={() => handleMouseEnter(work.id, localIndex, groupId)}
+                  onMouseLeave={handleMouseLeave}
+                />
+              );
+            })}
+          </div>
+        </div>
+      ))}
+    </div>
+  );
 
   return (
     <section id="works" className="w-full pt-48 md:pt-48 pt-24 pb-24 bg-background">
       <div className="w-full px-5">
-        {/* Removed "Works" title */}
-        
-        <div className="space-y-8 md:space-y-16">
-          {rows.map((row, rowIndex) => (
-            <div 
-              key={rowIndex} 
-              className="relative"
-            >
-              {/* Info Line - appears above the hovered row, clickable and hoverable - DESKTOP ONLY */}
-              {hoveredRowIndex === rowIndex && hoveredWork && (
-                <Link 
-                  href={`/work/${hoveredWork.slug}`}
-                  onMouseEnter={() => handleInfoLineEnter(hoveredWork.id, row.findIndex(w => w.id === hoveredWork.id) + rowIndex * 4)}
-                  onMouseLeave={handleMouseLeave}
-                  className="hidden md:block absolute -top-[29px] left-0 right-0 z-10 cursor-pointer pb-[21px]"
-                >
-                  <div className="grid grid-cols-12 gap-5">
-                    <div className="col-span-3 overflow-visible">
-                      <p className="text-body text-foreground whitespace-nowrap overflow-visible">{hoveredWork.genre}</p>
-                    </div>
-                    <div className="col-span-3 overflow-visible">
-                      <p className="text-body text-foreground whitespace-nowrap overflow-visible">{hoveredWork.title}</p>
-                    </div>
-                    <div className="col-span-3 overflow-visible">
-                      <p className="text-body text-foreground whitespace-nowrap overflow-visible">{hoveredWork.role}</p>
-                    </div>
-                    <div className="col-span-3 text-right overflow-visible">
-                      <p className="text-body text-foreground whitespace-nowrap overflow-visible">View</p>
-                    </div>
-                  </div>
-                </Link>
-              )}
+        {/* Group 1: Film & Awarded Works */}
+        <GroupTitle title="FILM & AWARDED WORKS" />
+        {renderWorkGroup(filmRows, filmWorks, 'film')}
 
-              {/* Works Grid Row - 1 column on mobile, 4 columns on desktop */}
-              <div className="grid grid-cols-12 gap-5 md:gap-5 gap-y-8">
-                {row.map((work, indexInRow) => {
-                  const globalIndex = rowIndex * 4 + indexInRow;
-                  const isHovered = work.id === hoveredWorkId;
-                  const isDimmed = hoveredWorkId !== null && !isHovered;
+        {/* Spacing between groups */}
+        <div className="h-24 md:h-32" />
 
-                  return (
-                    <WorkItem
-                      key={work.id}
-                      work={work}
-                      isHovered={isHovered}
-                      isDimmed={isDimmed}
-                      onMouseEnter={() => handleMouseEnter(work.id, globalIndex)}
-                      onMouseLeave={handleMouseLeave}
-                    />
-                  );
-                })}
-                
-                {/* Add "Your project could be here" frame to the last row - COMMENTED OUT FOR NOW */}
-                {/* {rowIndex === rows.length - 1 && row.length < 4 && (
-                  <div className="col-span-3">
-                    <div className="relative w-full aspect-[16/9] border border-foreground/20 bg-background flex items-center justify-center">
-                      <p className="text-body text-foreground text-center px-4">
-                        Your project could be here
-                      </p>
-                    </div>
-                  </div>
-                )} */}
-              </div>
-            </div>
-          ))}
-        </div>
+        {/* Group 2: Brand & Performance Campaigns */}
+        <GroupTitle title="BRAND & PERFORMANCE CAMPAIGNS" />
+        {renderWorkGroup(brandRows, brandWorks, 'brand')}
       </div>
     </section>
   );

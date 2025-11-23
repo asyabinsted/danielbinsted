@@ -32,7 +32,7 @@ export default function Preloader() {
       className="fixed inset-0 z-[9999] flex items-center justify-center bg-background transition-opacity duration-500"
       style={{ opacity: isLoading ? 1 : 0 }}
     >
-      <div style={{ width: '100px', height: '100px' }}>
+      <div style={{ width: '60px', height: '60px' }}>
         <Lottie
           animationData={preloaderAnimation}
           loop={true}

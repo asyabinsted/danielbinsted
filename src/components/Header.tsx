@@ -6,6 +6,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import RollingText from "./RollingText";
+import Lottie from "lottie-react";
+import preloaderAnimation from "../../public/preloader.json";
 
 export default function Header() {
   const [activeSection, setActiveSection] = useState<string>("");
@@ -128,14 +130,13 @@ export default function Header() {
           {/* Logomark - Center on desktop, Right corner on mobile */}
           <div className="col-span-3 md:col-span-6 flex justify-end md:justify-center pr-5 md:px-0">
             <Link href="/" onClick={handleLogoClick} className="inline-block cursor-pointer">
-              <Image
-                src="/assets/logos/logomark-binsted.svg"
-                alt="Binsted"
-                width={30}
-                height={31}
-                style={{ width: '30px', height: 'auto' }}
-                priority
-              />
+              <div style={{ width: '30px', height: '30px' }}>
+                <Lottie
+                  animationData={preloaderAnimation}
+                  loop={true}
+                  autoplay={true}
+                />
+              </div>
             </Link>
           </div>
 

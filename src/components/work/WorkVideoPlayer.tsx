@@ -155,10 +155,10 @@ export default function WorkVideoPlayer({
       </div>
 
       {/* Scrollable Content - Player Bar at bottom initially */}
-      <div className="relative z-10 min-h-screen flex flex-col justify-end pb-2 md:pb-5 pointer-events-none">
+      <div className="relative z-10 min-h-screen flex flex-col justify-end pb-1 md:pb-5 pointer-events-none">
         <div className="w-full pointer-events-auto">
           {/* Player Bar */}
-          <div className="container-grid items-end pb-1 md:pb-2">
+          <div className="container-grid items-end pb-0.5 md:pb-2">
             {/* Left - Title & Metadata (4 columns) */}
             <div className="col-span-4">
               <h2 className="text-supporting text-foreground">{title}</h2>

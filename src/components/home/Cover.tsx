@@ -11,7 +11,7 @@ export default function Cover() {
     }
   };
   return (
-    <section className="relative w-full h-screen">
+    <section className="relative w-full h-[90vh] md:h-screen">
       {/* Background Video */}
       <video
         autoPlay
